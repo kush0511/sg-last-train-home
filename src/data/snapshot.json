@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.07.29",
+  "generatedAt": "2026-07-29T00:00:00+08:00",
+  "networkAsOf": "2026-07-29",
+  "timezone": "Asia/Singapore",
+  "stationCount": 184,
+  "codedStopCount": 216,
+  "servicePatternCount": 30,
+  "publicHolidayYears": [2026, 2027],
+  "freshness": {
+    "warnAfterDays": 30,
+    "failAfterDays": 45
+  },
+  "scope": {
+    "included": [
+      "Six operating MRT lines",
+      "Bukit Panjang, Sengkang and Punggol LRT",
+      "CCL6 stations opened 12 July 2026",
+      "Hume, Punggol Coast and Teck Lee"
+    ],
+    "excludedAsUnopened": [
+      "DT36 Xilin",
+      "DT37 Sungei Bedok",
+      "TE30 Bedok South",
+      "TE31 Sungei Bedok"
+    ]
+  }
+}

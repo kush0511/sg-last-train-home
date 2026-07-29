@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.07.29",
+  "generatedAt": "2026-07-29T10:10:00+08:00",
+  "files": [
+    "network.v2026.07.29.json",
+    "timetables.v2026.07.29.json",
+    "transfers.v2026.07.29.json",
+    "sources.v2026.07.29.json"
+  ]
+}

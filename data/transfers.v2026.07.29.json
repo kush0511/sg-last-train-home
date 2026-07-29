@@ -1,0 +1,580 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.07.29",
+  "kind": "transfers",
+  "generatedAt": "2026-07-29T10:10:00+08:00",
+  "networkAsOf": "2026-07-29",
+  "timezone": "Asia/Singapore",
+  "payload": {
+    "rules": [
+      {
+        "stationId": "jurong-east",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "EW",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "jurong-east",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "NS",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "choa-chu-kang",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "BP",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "choa-chu-kang",
+        "fromCodePrefix": "BP",
+        "toCodePrefix": "NS",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "woodlands",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "TE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "woodlands",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "NS",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "bishan",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "CC",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "bishan",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "NS",
+        "walkMinutes": 6,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "newton",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "DT",
+        "walkMinutes": 8,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true,
+        "outOfSystem": true
+      },
+      {
+        "stationId": "newton",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "NS",
+        "walkMinutes": 8,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true,
+        "outOfSystem": true
+      },
+      {
+        "stationId": "orchard",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "TE",
+        "walkMinutes": 7,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "orchard",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "NS",
+        "walkMinutes": 7,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "dhoby-ghaut",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "NE",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "dhoby-ghaut",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "NS",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "dhoby-ghaut",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "CC",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "dhoby-ghaut",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "NS",
+        "walkMinutes": 6,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "dhoby-ghaut",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "CC",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "dhoby-ghaut",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "NE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "city-hall",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "EW",
+        "walkMinutes": 2,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "city-hall",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "NS",
+        "walkMinutes": 2,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "raffles-place",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "EW",
+        "walkMinutes": 2,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "raffles-place",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "NS",
+        "walkMinutes": 2,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "marina-bay",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "CC",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "marina-bay",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "NS",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "marina-bay",
+        "fromCodePrefix": "NS",
+        "toCodePrefix": "TE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "marina-bay",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "NS",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "marina-bay",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "TE",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "marina-bay",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "CC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "tampines",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "DT",
+        "walkMinutes": 9,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true,
+        "outOfSystem": true
+      },
+      {
+        "stationId": "tampines",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "EW",
+        "walkMinutes": 9,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true,
+        "outOfSystem": true
+      },
+      {
+        "stationId": "paya-lebar",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "CC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "paya-lebar",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "EW",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "bugis",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "DT",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "bugis",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "EW",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "outram-park",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "EW",
+        "walkMinutes": 3,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "outram-park",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "NE",
+        "walkMinutes": 3,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "outram-park",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "TE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "outram-park",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "EW",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "outram-park",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "TE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "outram-park",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "NE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "buona-vista",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "CC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "buona-vista",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "EW",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "harbourfront",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "CC",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "harbourfront",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "NE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "little-india",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "DT",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "little-india",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "NE",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "serangoon",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "CC",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "serangoon",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "NE",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "sengkang",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "STC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "sengkang",
+        "fromCodePrefix": "STC",
+        "toCodePrefix": "NE",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "punggol",
+        "fromCodePrefix": "NE",
+        "toCodePrefix": "PTC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "punggol",
+        "fromCodePrefix": "PTC",
+        "toCodePrefix": "NE",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "promenade",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "DT",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "promenade",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "CC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "caldecott",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "TE",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "caldecott",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "CC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "botanic-gardens",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "DT",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "botanic-gardens",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "CC",
+        "walkMinutes": 5,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "macpherson",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "DT",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "macpherson",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "CC",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "bayfront",
+        "fromCodePrefix": "CC",
+        "toCodePrefix": "DT",
+        "walkMinutes": 3,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "bayfront",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "CC",
+        "walkMinutes": 3,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "bukit-panjang",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "BP",
+        "walkMinutes": 8,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true,
+        "outOfSystem": true
+      },
+      {
+        "stationId": "bukit-panjang",
+        "fromCodePrefix": "BP",
+        "toCodePrefix": "DT",
+        "walkMinutes": 8,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true,
+        "outOfSystem": true
+      },
+      {
+        "stationId": "stevens",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "TE",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "stevens",
+        "fromCodePrefix": "TE",
+        "toCodePrefix": "DT",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "expo",
+        "fromCodePrefix": "DT",
+        "toCodePrefix": "CG",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "expo",
+        "fromCodePrefix": "CG",
+        "toCodePrefix": "DT",
+        "walkMinutes": 4,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "tanah-merah",
+        "fromCodePrefix": "EW",
+        "toCodePrefix": "CG",
+        "walkMinutes": 3,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      },
+      {
+        "stationId": "tanah-merah",
+        "fromCodePrefix": "CG",
+        "toCodePrefix": "EW",
+        "walkMinutes": 3,
+        "sourceId": "community-transfer-times",
+        "directionSpecific": true
+      }
+    ],
+    "fallbackWalkMinutes": 6,
+    "defaultConnectionBufferMinutes": 3
+  }
+}

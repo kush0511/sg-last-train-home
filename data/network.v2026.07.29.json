@@ -1,0 +1,3294 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.07.29",
+  "kind": "network",
+  "generatedAt": "2026-07-29T10:10:00+08:00",
+  "networkAsOf": "2026-07-29",
+  "timezone": "Asia/Singapore",
+  "payload": {
+    "lines": {
+      "NS": {
+        "id": "NS",
+        "name": "North–South Line",
+        "shortName": "NSL",
+        "colour": "#d42e12",
+        "textColour": "#ffffff",
+        "operator": "SMRT"
+      },
+      "EW": {
+        "id": "EW",
+        "name": "East–West Line",
+        "shortName": "EWL",
+        "colour": "#009645",
+        "textColour": "#ffffff",
+        "operator": "SMRT"
+      },
+      "CG": {
+        "id": "CG",
+        "name": "Changi Airport Branch",
+        "shortName": "CGL",
+        "colour": "#009645",
+        "textColour": "#ffffff",
+        "operator": "SMRT"
+      },
+      "NE": {
+        "id": "NE",
+        "name": "North East Line",
+        "shortName": "NEL",
+        "colour": "#9900aa",
+        "textColour": "#ffffff",
+        "operator": "SBS Transit"
+      },
+      "CC": {
+        "id": "CC",
+        "name": "Circle Line",
+        "shortName": "CCL",
+        "colour": "#fa9e0d",
+        "textColour": "#111827",
+        "operator": "SMRT"
+      },
+      "DT": {
+        "id": "DT",
+        "name": "Downtown Line",
+        "shortName": "DTL",
+        "colour": "#005ec4",
+        "textColour": "#ffffff",
+        "operator": "SBS Transit"
+      },
+      "TE": {
+        "id": "TE",
+        "name": "Thomson–East Coast Line",
+        "shortName": "TEL",
+        "colour": "#9d5b25",
+        "textColour": "#ffffff",
+        "operator": "SMRT"
+      },
+      "BP": {
+        "id": "BP",
+        "name": "Bukit Panjang LRT",
+        "shortName": "BPLRT",
+        "colour": "#748477",
+        "textColour": "#ffffff",
+        "operator": "SMRT"
+      },
+      "SK": {
+        "id": "SK",
+        "name": "Sengkang LRT",
+        "shortName": "SKLRT",
+        "colour": "#748477",
+        "textColour": "#ffffff",
+        "operator": "SBS Transit"
+      },
+      "PG": {
+        "id": "PG",
+        "name": "Punggol LRT",
+        "shortName": "PGLRT",
+        "colour": "#748477",
+        "textColour": "#ffffff",
+        "operator": "SBS Transit"
+      }
+    },
+    "lineStops": {
+      "NS": [
+        {
+          "code": "NS1",
+          "name": "Jurong East",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS2",
+          "name": "Bukit Batok",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS3",
+          "name": "Bukit Gombak",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS4",
+          "name": "Choa Chu Kang",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS5",
+          "name": "Yew Tee",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS7",
+          "name": "Kranji",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS8",
+          "name": "Marsiling",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS9",
+          "name": "Woodlands",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS10",
+          "name": "Admiralty",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS11",
+          "name": "Sembawang",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS12",
+          "name": "Canberra",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS13",
+          "name": "Yishun",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS14",
+          "name": "Khatib",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS15",
+          "name": "Yio Chu Kang",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS16",
+          "name": "Ang Mo Kio",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS17",
+          "name": "Bishan",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS18",
+          "name": "Braddell",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS19",
+          "name": "Toa Payoh",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS20",
+          "name": "Novena",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS21",
+          "name": "Newton",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS22",
+          "name": "Orchard",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS23",
+          "name": "Somerset",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS24",
+          "name": "Dhoby Ghaut",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS25",
+          "name": "City Hall",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS26",
+          "name": "Raffles Place",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS27",
+          "name": "Marina Bay",
+          "lineId": "NS"
+        },
+        {
+          "code": "NS28",
+          "name": "Marina South Pier",
+          "lineId": "NS"
+        }
+      ],
+      "EW": [
+        {
+          "code": "EW1",
+          "name": "Pasir Ris",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW2",
+          "name": "Tampines",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW3",
+          "name": "Simei",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW4",
+          "name": "Tanah Merah",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW5",
+          "name": "Bedok",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW6",
+          "name": "Kembangan",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW7",
+          "name": "Eunos",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW8",
+          "name": "Paya Lebar",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW9",
+          "name": "Aljunied",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW10",
+          "name": "Kallang",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW11",
+          "name": "Lavender",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW12",
+          "name": "Bugis",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW13",
+          "name": "City Hall",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW14",
+          "name": "Raffles Place",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW15",
+          "name": "Tanjong Pagar",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW16",
+          "name": "Outram Park",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW17",
+          "name": "Tiong Bahru",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW18",
+          "name": "Redhill",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW19",
+          "name": "Queenstown",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW20",
+          "name": "Commonwealth",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW21",
+          "name": "Buona Vista",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW22",
+          "name": "Dover",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW23",
+          "name": "Clementi",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW24",
+          "name": "Jurong East",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW25",
+          "name": "Chinese Garden",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW26",
+          "name": "Lakeside",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW27",
+          "name": "Boon Lay",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW28",
+          "name": "Pioneer",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW29",
+          "name": "Joo Koon",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW30",
+          "name": "Gul Circle",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW31",
+          "name": "Tuas Crescent",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW32",
+          "name": "Tuas West Road",
+          "lineId": "EW"
+        },
+        {
+          "code": "EW33",
+          "name": "Tuas Link",
+          "lineId": "EW"
+        }
+      ],
+      "CG": [
+        {
+          "code": "EW4",
+          "name": "Tanah Merah",
+          "lineId": "CG"
+        },
+        {
+          "code": "CG1",
+          "name": "Expo",
+          "lineId": "CG"
+        },
+        {
+          "code": "CG2",
+          "name": "Changi Airport",
+          "lineId": "CG"
+        }
+      ],
+      "NE": [
+        {
+          "code": "NE1",
+          "name": "HarbourFront",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE3",
+          "name": "Outram Park",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE4",
+          "name": "Chinatown",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE5",
+          "name": "Clarke Quay",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE6",
+          "name": "Dhoby Ghaut",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE7",
+          "name": "Little India",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE8",
+          "name": "Farrer Park",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE9",
+          "name": "Boon Keng",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE10",
+          "name": "Potong Pasir",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE11",
+          "name": "Woodleigh",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE12",
+          "name": "Serangoon",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE13",
+          "name": "Kovan",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE14",
+          "name": "Hougang",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE15",
+          "name": "Buangkok",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE16",
+          "name": "Sengkang",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE17",
+          "name": "Punggol",
+          "lineId": "NE"
+        },
+        {
+          "code": "NE18",
+          "name": "Punggol Coast",
+          "lineId": "NE"
+        }
+      ],
+      "CC": [
+        {
+          "code": "CC1",
+          "name": "Dhoby Ghaut",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC2",
+          "name": "Bras Basah",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC3",
+          "name": "Esplanade",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC4",
+          "name": "Promenade",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC5",
+          "name": "Nicoll Highway",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC6",
+          "name": "Stadium",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC7",
+          "name": "Mountbatten",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC8",
+          "name": "Dakota",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC9",
+          "name": "Paya Lebar",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC10",
+          "name": "MacPherson",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC11",
+          "name": "Tai Seng",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC12",
+          "name": "Bartley",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC13",
+          "name": "Serangoon",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC14",
+          "name": "Lorong Chuan",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC15",
+          "name": "Bishan",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC16",
+          "name": "Marymount",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC17",
+          "name": "Caldecott",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC19",
+          "name": "Botanic Gardens",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC20",
+          "name": "Farrer Road",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC21",
+          "name": "Holland Village",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC22",
+          "name": "Buona Vista",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC23",
+          "name": "one-north",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC24",
+          "name": "Kent Ridge",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC25",
+          "name": "Haw Par Villa",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC26",
+          "name": "Pasir Panjang",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC27",
+          "name": "Labrador Park",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC28",
+          "name": "Telok Blangah",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC29",
+          "name": "HarbourFront",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC30",
+          "name": "Keppel",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC31",
+          "name": "Cantonment",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC32",
+          "name": "Prince Edward Road",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC33",
+          "name": "Marina Bay",
+          "lineId": "CC"
+        },
+        {
+          "code": "CC34",
+          "name": "Bayfront",
+          "lineId": "CC"
+        }
+      ],
+      "DT": [
+        {
+          "code": "DT1",
+          "name": "Bukit Panjang",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT2",
+          "name": "Cashew",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT3",
+          "name": "Hillview",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT4",
+          "name": "Hume",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT5",
+          "name": "Beauty World",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT6",
+          "name": "King Albert Park",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT7",
+          "name": "Sixth Avenue",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT8",
+          "name": "Tan Kah Kee",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT9",
+          "name": "Botanic Gardens",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT10",
+          "name": "Stevens",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT11",
+          "name": "Newton",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT12",
+          "name": "Little India",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT13",
+          "name": "Rochor",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT14",
+          "name": "Bugis",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT15",
+          "name": "Promenade",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT16",
+          "name": "Bayfront",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT17",
+          "name": "Downtown",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT18",
+          "name": "Telok Ayer",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT19",
+          "name": "Chinatown",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT20",
+          "name": "Fort Canning",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT21",
+          "name": "Bencoolen",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT22",
+          "name": "Jalan Besar",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT23",
+          "name": "Bendemeer",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT24",
+          "name": "Geylang Bahru",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT25",
+          "name": "Mattar",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT26",
+          "name": "MacPherson",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT27",
+          "name": "Ubi",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT28",
+          "name": "Kaki Bukit",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT29",
+          "name": "Bedok North",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT30",
+          "name": "Bedok Reservoir",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT31",
+          "name": "Tampines West",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT32",
+          "name": "Tampines",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT33",
+          "name": "Tampines East",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT34",
+          "name": "Upper Changi",
+          "lineId": "DT"
+        },
+        {
+          "code": "DT35",
+          "name": "Expo",
+          "lineId": "DT"
+        }
+      ],
+      "TE": [
+        {
+          "code": "TE1",
+          "name": "Woodlands North",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE2",
+          "name": "Woodlands",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE3",
+          "name": "Woodlands South",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE4",
+          "name": "Springleaf",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE5",
+          "name": "Lentor",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE6",
+          "name": "Mayflower",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE7",
+          "name": "Bright Hill",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE8",
+          "name": "Upper Thomson",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE9",
+          "name": "Caldecott",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE11",
+          "name": "Stevens",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE12",
+          "name": "Napier",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE13",
+          "name": "Orchard Boulevard",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE14",
+          "name": "Orchard",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE15",
+          "name": "Great World",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE16",
+          "name": "Havelock",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE17",
+          "name": "Outram Park",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE18",
+          "name": "Maxwell",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE19",
+          "name": "Shenton Way",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE20",
+          "name": "Marina Bay",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE22",
+          "name": "Gardens by the Bay",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE23",
+          "name": "Tanjong Rhu",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE24",
+          "name": "Katong Park",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE25",
+          "name": "Tanjong Katong",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE26",
+          "name": "Marine Parade",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE27",
+          "name": "Marine Terrace",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE28",
+          "name": "Siglap",
+          "lineId": "TE"
+        },
+        {
+          "code": "TE29",
+          "name": "Bayshore",
+          "lineId": "TE"
+        }
+      ],
+      "BP": [
+        {
+          "code": "BP1",
+          "name": "Choa Chu Kang",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP2",
+          "name": "South View",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP3",
+          "name": "Keat Hong",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP4",
+          "name": "Teck Whye",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP5",
+          "name": "Phoenix",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP6",
+          "name": "Bukit Panjang",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP7",
+          "name": "Petir",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP8",
+          "name": "Pending",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP9",
+          "name": "Bangkit",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP10",
+          "name": "Fajar",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP11",
+          "name": "Segar",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP12",
+          "name": "Jelapang",
+          "lineId": "BP"
+        },
+        {
+          "code": "BP13",
+          "name": "Senja",
+          "lineId": "BP"
+        }
+      ],
+      "SK": [
+        {
+          "code": "STC",
+          "name": "Sengkang",
+          "lineId": "SK"
+        },
+        {
+          "code": "SE1",
+          "name": "Compassvale",
+          "lineId": "SK"
+        },
+        {
+          "code": "SE2",
+          "name": "Rumbia",
+          "lineId": "SK"
+        },
+        {
+          "code": "SE3",
+          "name": "Bakau",
+          "lineId": "SK"
+        },
+        {
+          "code": "SE4",
+          "name": "Kangkar",
+          "lineId": "SK"
+        },
+        {
+          "code": "SE5",
+          "name": "Ranggung",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW1",
+          "name": "Cheng Lim",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW2",
+          "name": "Farmway",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW3",
+          "name": "Kupang",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW4",
+          "name": "Thanggam",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW5",
+          "name": "Fernvale",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW6",
+          "name": "Layar",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW7",
+          "name": "Tongkang",
+          "lineId": "SK"
+        },
+        {
+          "code": "SW8",
+          "name": "Renjong",
+          "lineId": "SK"
+        }
+      ],
+      "PG": [
+        {
+          "code": "PTC",
+          "name": "Punggol",
+          "lineId": "PG"
+        },
+        {
+          "code": "PE1",
+          "name": "Cove",
+          "lineId": "PG"
+        },
+        {
+          "code": "PE2",
+          "name": "Meridian",
+          "lineId": "PG"
+        },
+        {
+          "code": "PE3",
+          "name": "Coral Edge",
+          "lineId": "PG"
+        },
+        {
+          "code": "PE4",
+          "name": "Riviera",
+          "lineId": "PG"
+        },
+        {
+          "code": "PE5",
+          "name": "Kadaloor",
+          "lineId": "PG"
+        },
+        {
+          "code": "PE6",
+          "name": "Oasis",
+          "lineId": "PG"
+        },
+        {
+          "code": "PE7",
+          "name": "Damai",
+          "lineId": "PG"
+        },
+        {
+          "code": "PW1",
+          "name": "Sam Kee",
+          "lineId": "PG"
+        },
+        {
+          "code": "PW2",
+          "name": "Teck Lee",
+          "lineId": "PG"
+        },
+        {
+          "code": "PW3",
+          "name": "Punggol Point",
+          "lineId": "PG"
+        },
+        {
+          "code": "PW4",
+          "name": "Samudera",
+          "lineId": "PG"
+        },
+        {
+          "code": "PW5",
+          "name": "Nibong",
+          "lineId": "PG"
+        },
+        {
+          "code": "PW6",
+          "name": "Sumang",
+          "lineId": "PG"
+        },
+        {
+          "code": "PW7",
+          "name": "Soo Teck",
+          "lineId": "PG"
+        }
+      ]
+    },
+    "stations": [
+      {
+        "id": "admiralty",
+        "name": "Admiralty",
+        "codes": [
+          "NS10"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Admiralty · NS10"
+      },
+      {
+        "id": "aljunied",
+        "name": "Aljunied",
+        "codes": [
+          "EW9"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Aljunied · EW9"
+      },
+      {
+        "id": "ang-mo-kio",
+        "name": "Ang Mo Kio",
+        "codes": [
+          "NS16"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Ang Mo Kio · NS16"
+      },
+      {
+        "id": "bakau",
+        "name": "Bakau",
+        "codes": [
+          "SE3"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Bakau · SE3"
+      },
+      {
+        "id": "bangkit",
+        "name": "Bangkit",
+        "codes": [
+          "BP9"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Bangkit · BP9"
+      },
+      {
+        "id": "bartley",
+        "name": "Bartley",
+        "codes": [
+          "CC12"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Bartley · CC12"
+      },
+      {
+        "id": "bayfront",
+        "name": "Bayfront",
+        "codes": [
+          "CC34",
+          "DT16"
+        ],
+        "lineIds": [
+          "CC",
+          "DT"
+        ],
+        "searchLabel": "Bayfront · CC34 / DT16"
+      },
+      {
+        "id": "bayshore",
+        "name": "Bayshore",
+        "codes": [
+          "TE29"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Bayshore · TE29"
+      },
+      {
+        "id": "beauty-world",
+        "name": "Beauty World",
+        "codes": [
+          "DT5"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Beauty World · DT5"
+      },
+      {
+        "id": "bedok",
+        "name": "Bedok",
+        "codes": [
+          "EW5"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Bedok · EW5"
+      },
+      {
+        "id": "bedok-north",
+        "name": "Bedok North",
+        "codes": [
+          "DT29"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Bedok North · DT29"
+      },
+      {
+        "id": "bedok-reservoir",
+        "name": "Bedok Reservoir",
+        "codes": [
+          "DT30"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Bedok Reservoir · DT30"
+      },
+      {
+        "id": "bencoolen",
+        "name": "Bencoolen",
+        "codes": [
+          "DT21"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Bencoolen · DT21"
+      },
+      {
+        "id": "bendemeer",
+        "name": "Bendemeer",
+        "codes": [
+          "DT23"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Bendemeer · DT23"
+      },
+      {
+        "id": "bishan",
+        "name": "Bishan",
+        "codes": [
+          "NS17",
+          "CC15"
+        ],
+        "lineIds": [
+          "NS",
+          "CC"
+        ],
+        "searchLabel": "Bishan · NS17 / CC15"
+      },
+      {
+        "id": "boon-keng",
+        "name": "Boon Keng",
+        "codes": [
+          "NE9"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Boon Keng · NE9"
+      },
+      {
+        "id": "boon-lay",
+        "name": "Boon Lay",
+        "codes": [
+          "EW27"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Boon Lay · EW27"
+      },
+      {
+        "id": "botanic-gardens",
+        "name": "Botanic Gardens",
+        "codes": [
+          "CC19",
+          "DT9"
+        ],
+        "lineIds": [
+          "CC",
+          "DT"
+        ],
+        "searchLabel": "Botanic Gardens · CC19 / DT9"
+      },
+      {
+        "id": "braddell",
+        "name": "Braddell",
+        "codes": [
+          "NS18"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Braddell · NS18"
+      },
+      {
+        "id": "bras-basah",
+        "name": "Bras Basah",
+        "codes": [
+          "CC2"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Bras Basah · CC2"
+      },
+      {
+        "id": "bright-hill",
+        "name": "Bright Hill",
+        "codes": [
+          "TE7"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Bright Hill · TE7"
+      },
+      {
+        "id": "buangkok",
+        "name": "Buangkok",
+        "codes": [
+          "NE15"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Buangkok · NE15"
+      },
+      {
+        "id": "bugis",
+        "name": "Bugis",
+        "codes": [
+          "EW12",
+          "DT14"
+        ],
+        "lineIds": [
+          "EW",
+          "DT"
+        ],
+        "searchLabel": "Bugis · EW12 / DT14"
+      },
+      {
+        "id": "bukit-batok",
+        "name": "Bukit Batok",
+        "codes": [
+          "NS2"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Bukit Batok · NS2"
+      },
+      {
+        "id": "bukit-gombak",
+        "name": "Bukit Gombak",
+        "codes": [
+          "NS3"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Bukit Gombak · NS3"
+      },
+      {
+        "id": "bukit-panjang",
+        "name": "Bukit Panjang",
+        "codes": [
+          "DT1",
+          "BP6"
+        ],
+        "lineIds": [
+          "DT",
+          "BP"
+        ],
+        "searchLabel": "Bukit Panjang · DT1 / BP6"
+      },
+      {
+        "id": "buona-vista",
+        "name": "Buona Vista",
+        "codes": [
+          "EW21",
+          "CC22"
+        ],
+        "lineIds": [
+          "EW",
+          "CC"
+        ],
+        "searchLabel": "Buona Vista · EW21 / CC22"
+      },
+      {
+        "id": "caldecott",
+        "name": "Caldecott",
+        "codes": [
+          "CC17",
+          "TE9"
+        ],
+        "lineIds": [
+          "CC",
+          "TE"
+        ],
+        "searchLabel": "Caldecott · CC17 / TE9"
+      },
+      {
+        "id": "canberra",
+        "name": "Canberra",
+        "codes": [
+          "NS12"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Canberra · NS12"
+      },
+      {
+        "id": "cantonment",
+        "name": "Cantonment",
+        "codes": [
+          "CC31"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Cantonment · CC31"
+      },
+      {
+        "id": "cashew",
+        "name": "Cashew",
+        "codes": [
+          "DT2"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Cashew · DT2"
+      },
+      {
+        "id": "changi-airport",
+        "name": "Changi Airport",
+        "codes": [
+          "CG2"
+        ],
+        "lineIds": [
+          "CG"
+        ],
+        "searchLabel": "Changi Airport · CG2"
+      },
+      {
+        "id": "cheng-lim",
+        "name": "Cheng Lim",
+        "codes": [
+          "SW1"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Cheng Lim · SW1"
+      },
+      {
+        "id": "chinatown",
+        "name": "Chinatown",
+        "codes": [
+          "NE4",
+          "DT19"
+        ],
+        "lineIds": [
+          "NE",
+          "DT"
+        ],
+        "searchLabel": "Chinatown · NE4 / DT19"
+      },
+      {
+        "id": "chinese-garden",
+        "name": "Chinese Garden",
+        "codes": [
+          "EW25"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Chinese Garden · EW25"
+      },
+      {
+        "id": "choa-chu-kang",
+        "name": "Choa Chu Kang",
+        "codes": [
+          "NS4",
+          "BP1"
+        ],
+        "lineIds": [
+          "NS",
+          "BP"
+        ],
+        "searchLabel": "Choa Chu Kang · NS4 / BP1"
+      },
+      {
+        "id": "city-hall",
+        "name": "City Hall",
+        "codes": [
+          "NS25",
+          "EW13"
+        ],
+        "lineIds": [
+          "NS",
+          "EW"
+        ],
+        "searchLabel": "City Hall · NS25 / EW13"
+      },
+      {
+        "id": "clarke-quay",
+        "name": "Clarke Quay",
+        "codes": [
+          "NE5"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Clarke Quay · NE5"
+      },
+      {
+        "id": "clementi",
+        "name": "Clementi",
+        "codes": [
+          "EW23"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Clementi · EW23"
+      },
+      {
+        "id": "commonwealth",
+        "name": "Commonwealth",
+        "codes": [
+          "EW20"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Commonwealth · EW20"
+      },
+      {
+        "id": "compassvale",
+        "name": "Compassvale",
+        "codes": [
+          "SE1"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Compassvale · SE1"
+      },
+      {
+        "id": "coral-edge",
+        "name": "Coral Edge",
+        "codes": [
+          "PE3"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Coral Edge · PE3"
+      },
+      {
+        "id": "cove",
+        "name": "Cove",
+        "codes": [
+          "PE1"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Cove · PE1"
+      },
+      {
+        "id": "dakota",
+        "name": "Dakota",
+        "codes": [
+          "CC8"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Dakota · CC8"
+      },
+      {
+        "id": "damai",
+        "name": "Damai",
+        "codes": [
+          "PE7"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Damai · PE7"
+      },
+      {
+        "id": "dhoby-ghaut",
+        "name": "Dhoby Ghaut",
+        "codes": [
+          "NS24",
+          "NE6",
+          "CC1"
+        ],
+        "lineIds": [
+          "NS",
+          "NE",
+          "CC"
+        ],
+        "searchLabel": "Dhoby Ghaut · NS24 / NE6 / CC1"
+      },
+      {
+        "id": "dover",
+        "name": "Dover",
+        "codes": [
+          "EW22"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Dover · EW22"
+      },
+      {
+        "id": "downtown",
+        "name": "Downtown",
+        "codes": [
+          "DT17"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Downtown · DT17"
+      },
+      {
+        "id": "esplanade",
+        "name": "Esplanade",
+        "codes": [
+          "CC3"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Esplanade · CC3"
+      },
+      {
+        "id": "eunos",
+        "name": "Eunos",
+        "codes": [
+          "EW7"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Eunos · EW7"
+      },
+      {
+        "id": "expo",
+        "name": "Expo",
+        "codes": [
+          "CG1",
+          "DT35"
+        ],
+        "lineIds": [
+          "CG",
+          "DT"
+        ],
+        "searchLabel": "Expo · CG1 / DT35"
+      },
+      {
+        "id": "fajar",
+        "name": "Fajar",
+        "codes": [
+          "BP10"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Fajar · BP10"
+      },
+      {
+        "id": "farmway",
+        "name": "Farmway",
+        "codes": [
+          "SW2"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Farmway · SW2"
+      },
+      {
+        "id": "farrer-park",
+        "name": "Farrer Park",
+        "codes": [
+          "NE8"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Farrer Park · NE8"
+      },
+      {
+        "id": "farrer-road",
+        "name": "Farrer Road",
+        "codes": [
+          "CC20"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Farrer Road · CC20"
+      },
+      {
+        "id": "fernvale",
+        "name": "Fernvale",
+        "codes": [
+          "SW5"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Fernvale · SW5"
+      },
+      {
+        "id": "fort-canning",
+        "name": "Fort Canning",
+        "codes": [
+          "DT20"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Fort Canning · DT20"
+      },
+      {
+        "id": "gardens-by-the-bay",
+        "name": "Gardens by the Bay",
+        "codes": [
+          "TE22"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Gardens by the Bay · TE22"
+      },
+      {
+        "id": "geylang-bahru",
+        "name": "Geylang Bahru",
+        "codes": [
+          "DT24"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Geylang Bahru · DT24"
+      },
+      {
+        "id": "great-world",
+        "name": "Great World",
+        "codes": [
+          "TE15"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Great World · TE15"
+      },
+      {
+        "id": "gul-circle",
+        "name": "Gul Circle",
+        "codes": [
+          "EW30"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Gul Circle · EW30"
+      },
+      {
+        "id": "harbourfront",
+        "name": "HarbourFront",
+        "codes": [
+          "NE1",
+          "CC29"
+        ],
+        "lineIds": [
+          "NE",
+          "CC"
+        ],
+        "searchLabel": "HarbourFront · NE1 / CC29"
+      },
+      {
+        "id": "havelock",
+        "name": "Havelock",
+        "codes": [
+          "TE16"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Havelock · TE16"
+      },
+      {
+        "id": "haw-par-villa",
+        "name": "Haw Par Villa",
+        "codes": [
+          "CC25"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Haw Par Villa · CC25"
+      },
+      {
+        "id": "hillview",
+        "name": "Hillview",
+        "codes": [
+          "DT3"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Hillview · DT3"
+      },
+      {
+        "id": "holland-village",
+        "name": "Holland Village",
+        "codes": [
+          "CC21"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Holland Village · CC21"
+      },
+      {
+        "id": "hougang",
+        "name": "Hougang",
+        "codes": [
+          "NE14"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Hougang · NE14"
+      },
+      {
+        "id": "hume",
+        "name": "Hume",
+        "codes": [
+          "DT4"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Hume · DT4"
+      },
+      {
+        "id": "jalan-besar",
+        "name": "Jalan Besar",
+        "codes": [
+          "DT22"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Jalan Besar · DT22"
+      },
+      {
+        "id": "jelapang",
+        "name": "Jelapang",
+        "codes": [
+          "BP12"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Jelapang · BP12"
+      },
+      {
+        "id": "joo-koon",
+        "name": "Joo Koon",
+        "codes": [
+          "EW29"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Joo Koon · EW29"
+      },
+      {
+        "id": "jurong-east",
+        "name": "Jurong East",
+        "codes": [
+          "NS1",
+          "EW24"
+        ],
+        "lineIds": [
+          "NS",
+          "EW"
+        ],
+        "searchLabel": "Jurong East · NS1 / EW24"
+      },
+      {
+        "id": "kadaloor",
+        "name": "Kadaloor",
+        "codes": [
+          "PE5"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Kadaloor · PE5"
+      },
+      {
+        "id": "kaki-bukit",
+        "name": "Kaki Bukit",
+        "codes": [
+          "DT28"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Kaki Bukit · DT28"
+      },
+      {
+        "id": "kallang",
+        "name": "Kallang",
+        "codes": [
+          "EW10"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Kallang · EW10"
+      },
+      {
+        "id": "kangkar",
+        "name": "Kangkar",
+        "codes": [
+          "SE4"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Kangkar · SE4"
+      },
+      {
+        "id": "katong-park",
+        "name": "Katong Park",
+        "codes": [
+          "TE24"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Katong Park · TE24"
+      },
+      {
+        "id": "keat-hong",
+        "name": "Keat Hong",
+        "codes": [
+          "BP3"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Keat Hong · BP3"
+      },
+      {
+        "id": "kembangan",
+        "name": "Kembangan",
+        "codes": [
+          "EW6"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Kembangan · EW6"
+      },
+      {
+        "id": "kent-ridge",
+        "name": "Kent Ridge",
+        "codes": [
+          "CC24"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Kent Ridge · CC24"
+      },
+      {
+        "id": "keppel",
+        "name": "Keppel",
+        "codes": [
+          "CC30"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Keppel · CC30"
+      },
+      {
+        "id": "khatib",
+        "name": "Khatib",
+        "codes": [
+          "NS14"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Khatib · NS14"
+      },
+      {
+        "id": "king-albert-park",
+        "name": "King Albert Park",
+        "codes": [
+          "DT6"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "King Albert Park · DT6"
+      },
+      {
+        "id": "kovan",
+        "name": "Kovan",
+        "codes": [
+          "NE13"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Kovan · NE13"
+      },
+      {
+        "id": "kranji",
+        "name": "Kranji",
+        "codes": [
+          "NS7"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Kranji · NS7"
+      },
+      {
+        "id": "kupang",
+        "name": "Kupang",
+        "codes": [
+          "SW3"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Kupang · SW3"
+      },
+      {
+        "id": "labrador-park",
+        "name": "Labrador Park",
+        "codes": [
+          "CC27"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Labrador Park · CC27"
+      },
+      {
+        "id": "lakeside",
+        "name": "Lakeside",
+        "codes": [
+          "EW26"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Lakeside · EW26"
+      },
+      {
+        "id": "lavender",
+        "name": "Lavender",
+        "codes": [
+          "EW11"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Lavender · EW11"
+      },
+      {
+        "id": "layar",
+        "name": "Layar",
+        "codes": [
+          "SW6"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Layar · SW6"
+      },
+      {
+        "id": "lentor",
+        "name": "Lentor",
+        "codes": [
+          "TE5"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Lentor · TE5"
+      },
+      {
+        "id": "little-india",
+        "name": "Little India",
+        "codes": [
+          "NE7",
+          "DT12"
+        ],
+        "lineIds": [
+          "NE",
+          "DT"
+        ],
+        "searchLabel": "Little India · NE7 / DT12"
+      },
+      {
+        "id": "lorong-chuan",
+        "name": "Lorong Chuan",
+        "codes": [
+          "CC14"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Lorong Chuan · CC14"
+      },
+      {
+        "id": "macpherson",
+        "name": "MacPherson",
+        "codes": [
+          "CC10",
+          "DT26"
+        ],
+        "lineIds": [
+          "CC",
+          "DT"
+        ],
+        "searchLabel": "MacPherson · CC10 / DT26"
+      },
+      {
+        "id": "marina-bay",
+        "name": "Marina Bay",
+        "codes": [
+          "NS27",
+          "CC33",
+          "TE20"
+        ],
+        "lineIds": [
+          "NS",
+          "CC",
+          "TE"
+        ],
+        "searchLabel": "Marina Bay · NS27 / CC33 / TE20"
+      },
+      {
+        "id": "marina-south-pier",
+        "name": "Marina South Pier",
+        "codes": [
+          "NS28"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Marina South Pier · NS28"
+      },
+      {
+        "id": "marine-parade",
+        "name": "Marine Parade",
+        "codes": [
+          "TE26"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Marine Parade · TE26"
+      },
+      {
+        "id": "marine-terrace",
+        "name": "Marine Terrace",
+        "codes": [
+          "TE27"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Marine Terrace · TE27"
+      },
+      {
+        "id": "marsiling",
+        "name": "Marsiling",
+        "codes": [
+          "NS8"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Marsiling · NS8"
+      },
+      {
+        "id": "marymount",
+        "name": "Marymount",
+        "codes": [
+          "CC16"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Marymount · CC16"
+      },
+      {
+        "id": "mattar",
+        "name": "Mattar",
+        "codes": [
+          "DT25"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Mattar · DT25"
+      },
+      {
+        "id": "maxwell",
+        "name": "Maxwell",
+        "codes": [
+          "TE18"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Maxwell · TE18"
+      },
+      {
+        "id": "mayflower",
+        "name": "Mayflower",
+        "codes": [
+          "TE6"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Mayflower · TE6"
+      },
+      {
+        "id": "meridian",
+        "name": "Meridian",
+        "codes": [
+          "PE2"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Meridian · PE2"
+      },
+      {
+        "id": "mountbatten",
+        "name": "Mountbatten",
+        "codes": [
+          "CC7"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Mountbatten · CC7"
+      },
+      {
+        "id": "napier",
+        "name": "Napier",
+        "codes": [
+          "TE12"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Napier · TE12"
+      },
+      {
+        "id": "newton",
+        "name": "Newton",
+        "codes": [
+          "NS21",
+          "DT11"
+        ],
+        "lineIds": [
+          "NS",
+          "DT"
+        ],
+        "searchLabel": "Newton · NS21 / DT11"
+      },
+      {
+        "id": "nibong",
+        "name": "Nibong",
+        "codes": [
+          "PW5"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Nibong · PW5"
+      },
+      {
+        "id": "nicoll-highway",
+        "name": "Nicoll Highway",
+        "codes": [
+          "CC5"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Nicoll Highway · CC5"
+      },
+      {
+        "id": "novena",
+        "name": "Novena",
+        "codes": [
+          "NS20"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Novena · NS20"
+      },
+      {
+        "id": "oasis",
+        "name": "Oasis",
+        "codes": [
+          "PE6"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Oasis · PE6"
+      },
+      {
+        "id": "one-north",
+        "name": "one-north",
+        "codes": [
+          "CC23"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "one-north · CC23"
+      },
+      {
+        "id": "orchard",
+        "name": "Orchard",
+        "codes": [
+          "NS22",
+          "TE14"
+        ],
+        "lineIds": [
+          "NS",
+          "TE"
+        ],
+        "searchLabel": "Orchard · NS22 / TE14"
+      },
+      {
+        "id": "orchard-boulevard",
+        "name": "Orchard Boulevard",
+        "codes": [
+          "TE13"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Orchard Boulevard · TE13"
+      },
+      {
+        "id": "outram-park",
+        "name": "Outram Park",
+        "codes": [
+          "EW16",
+          "NE3",
+          "TE17"
+        ],
+        "lineIds": [
+          "EW",
+          "NE",
+          "TE"
+        ],
+        "searchLabel": "Outram Park · EW16 / NE3 / TE17"
+      },
+      {
+        "id": "pasir-panjang",
+        "name": "Pasir Panjang",
+        "codes": [
+          "CC26"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Pasir Panjang · CC26"
+      },
+      {
+        "id": "pasir-ris",
+        "name": "Pasir Ris",
+        "codes": [
+          "EW1"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Pasir Ris · EW1"
+      },
+      {
+        "id": "paya-lebar",
+        "name": "Paya Lebar",
+        "codes": [
+          "EW8",
+          "CC9"
+        ],
+        "lineIds": [
+          "EW",
+          "CC"
+        ],
+        "searchLabel": "Paya Lebar · EW8 / CC9"
+      },
+      {
+        "id": "pending",
+        "name": "Pending",
+        "codes": [
+          "BP8"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Pending · BP8"
+      },
+      {
+        "id": "petir",
+        "name": "Petir",
+        "codes": [
+          "BP7"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Petir · BP7"
+      },
+      {
+        "id": "phoenix",
+        "name": "Phoenix",
+        "codes": [
+          "BP5"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Phoenix · BP5"
+      },
+      {
+        "id": "pioneer",
+        "name": "Pioneer",
+        "codes": [
+          "EW28"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Pioneer · EW28"
+      },
+      {
+        "id": "potong-pasir",
+        "name": "Potong Pasir",
+        "codes": [
+          "NE10"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Potong Pasir · NE10"
+      },
+      {
+        "id": "prince-edward-road",
+        "name": "Prince Edward Road",
+        "codes": [
+          "CC32"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Prince Edward Road · CC32"
+      },
+      {
+        "id": "promenade",
+        "name": "Promenade",
+        "codes": [
+          "CC4",
+          "DT15"
+        ],
+        "lineIds": [
+          "CC",
+          "DT"
+        ],
+        "searchLabel": "Promenade · CC4 / DT15"
+      },
+      {
+        "id": "punggol",
+        "name": "Punggol",
+        "codes": [
+          "NE17",
+          "PTC"
+        ],
+        "lineIds": [
+          "NE",
+          "PG"
+        ],
+        "searchLabel": "Punggol · NE17 / PTC"
+      },
+      {
+        "id": "punggol-coast",
+        "name": "Punggol Coast",
+        "codes": [
+          "NE18"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Punggol Coast · NE18"
+      },
+      {
+        "id": "punggol-point",
+        "name": "Punggol Point",
+        "codes": [
+          "PW3"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Punggol Point · PW3"
+      },
+      {
+        "id": "queenstown",
+        "name": "Queenstown",
+        "codes": [
+          "EW19"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Queenstown · EW19"
+      },
+      {
+        "id": "raffles-place",
+        "name": "Raffles Place",
+        "codes": [
+          "NS26",
+          "EW14"
+        ],
+        "lineIds": [
+          "NS",
+          "EW"
+        ],
+        "searchLabel": "Raffles Place · NS26 / EW14"
+      },
+      {
+        "id": "ranggung",
+        "name": "Ranggung",
+        "codes": [
+          "SE5"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Ranggung · SE5"
+      },
+      {
+        "id": "redhill",
+        "name": "Redhill",
+        "codes": [
+          "EW18"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Redhill · EW18"
+      },
+      {
+        "id": "renjong",
+        "name": "Renjong",
+        "codes": [
+          "SW8"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Renjong · SW8"
+      },
+      {
+        "id": "riviera",
+        "name": "Riviera",
+        "codes": [
+          "PE4"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Riviera · PE4"
+      },
+      {
+        "id": "rochor",
+        "name": "Rochor",
+        "codes": [
+          "DT13"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Rochor · DT13"
+      },
+      {
+        "id": "rumbia",
+        "name": "Rumbia",
+        "codes": [
+          "SE2"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Rumbia · SE2"
+      },
+      {
+        "id": "sam-kee",
+        "name": "Sam Kee",
+        "codes": [
+          "PW1"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Sam Kee · PW1"
+      },
+      {
+        "id": "samudera",
+        "name": "Samudera",
+        "codes": [
+          "PW4"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Samudera · PW4"
+      },
+      {
+        "id": "segar",
+        "name": "Segar",
+        "codes": [
+          "BP11"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Segar · BP11"
+      },
+      {
+        "id": "sembawang",
+        "name": "Sembawang",
+        "codes": [
+          "NS11"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Sembawang · NS11"
+      },
+      {
+        "id": "sengkang",
+        "name": "Sengkang",
+        "codes": [
+          "NE16",
+          "STC"
+        ],
+        "lineIds": [
+          "NE",
+          "SK"
+        ],
+        "searchLabel": "Sengkang · NE16 / STC"
+      },
+      {
+        "id": "senja",
+        "name": "Senja",
+        "codes": [
+          "BP13"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Senja · BP13"
+      },
+      {
+        "id": "serangoon",
+        "name": "Serangoon",
+        "codes": [
+          "NE12",
+          "CC13"
+        ],
+        "lineIds": [
+          "NE",
+          "CC"
+        ],
+        "searchLabel": "Serangoon · NE12 / CC13"
+      },
+      {
+        "id": "shenton-way",
+        "name": "Shenton Way",
+        "codes": [
+          "TE19"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Shenton Way · TE19"
+      },
+      {
+        "id": "siglap",
+        "name": "Siglap",
+        "codes": [
+          "TE28"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Siglap · TE28"
+      },
+      {
+        "id": "simei",
+        "name": "Simei",
+        "codes": [
+          "EW3"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Simei · EW3"
+      },
+      {
+        "id": "sixth-avenue",
+        "name": "Sixth Avenue",
+        "codes": [
+          "DT7"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Sixth Avenue · DT7"
+      },
+      {
+        "id": "somerset",
+        "name": "Somerset",
+        "codes": [
+          "NS23"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Somerset · NS23"
+      },
+      {
+        "id": "soo-teck",
+        "name": "Soo Teck",
+        "codes": [
+          "PW7"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Soo Teck · PW7"
+      },
+      {
+        "id": "south-view",
+        "name": "South View",
+        "codes": [
+          "BP2"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "South View · BP2"
+      },
+      {
+        "id": "springleaf",
+        "name": "Springleaf",
+        "codes": [
+          "TE4"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Springleaf · TE4"
+      },
+      {
+        "id": "stadium",
+        "name": "Stadium",
+        "codes": [
+          "CC6"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Stadium · CC6"
+      },
+      {
+        "id": "stevens",
+        "name": "Stevens",
+        "codes": [
+          "DT10",
+          "TE11"
+        ],
+        "lineIds": [
+          "DT",
+          "TE"
+        ],
+        "searchLabel": "Stevens · DT10 / TE11"
+      },
+      {
+        "id": "sumang",
+        "name": "Sumang",
+        "codes": [
+          "PW6"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Sumang · PW6"
+      },
+      {
+        "id": "tai-seng",
+        "name": "Tai Seng",
+        "codes": [
+          "CC11"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Tai Seng · CC11"
+      },
+      {
+        "id": "tampines",
+        "name": "Tampines",
+        "codes": [
+          "EW2",
+          "DT32"
+        ],
+        "lineIds": [
+          "EW",
+          "DT"
+        ],
+        "searchLabel": "Tampines · EW2 / DT32"
+      },
+      {
+        "id": "tampines-east",
+        "name": "Tampines East",
+        "codes": [
+          "DT33"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Tampines East · DT33"
+      },
+      {
+        "id": "tampines-west",
+        "name": "Tampines West",
+        "codes": [
+          "DT31"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Tampines West · DT31"
+      },
+      {
+        "id": "tan-kah-kee",
+        "name": "Tan Kah Kee",
+        "codes": [
+          "DT8"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Tan Kah Kee · DT8"
+      },
+      {
+        "id": "tanah-merah",
+        "name": "Tanah Merah",
+        "codes": [
+          "EW4"
+        ],
+        "lineIds": [
+          "EW",
+          "CG"
+        ],
+        "searchLabel": "Tanah Merah · EW4"
+      },
+      {
+        "id": "tanjong-katong",
+        "name": "Tanjong Katong",
+        "codes": [
+          "TE25"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Tanjong Katong · TE25"
+      },
+      {
+        "id": "tanjong-pagar",
+        "name": "Tanjong Pagar",
+        "codes": [
+          "EW15"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Tanjong Pagar · EW15"
+      },
+      {
+        "id": "tanjong-rhu",
+        "name": "Tanjong Rhu",
+        "codes": [
+          "TE23"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Tanjong Rhu · TE23"
+      },
+      {
+        "id": "teck-lee",
+        "name": "Teck Lee",
+        "codes": [
+          "PW2"
+        ],
+        "lineIds": [
+          "PG"
+        ],
+        "searchLabel": "Teck Lee · PW2"
+      },
+      {
+        "id": "teck-whye",
+        "name": "Teck Whye",
+        "codes": [
+          "BP4"
+        ],
+        "lineIds": [
+          "BP"
+        ],
+        "searchLabel": "Teck Whye · BP4"
+      },
+      {
+        "id": "telok-ayer",
+        "name": "Telok Ayer",
+        "codes": [
+          "DT18"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Telok Ayer · DT18"
+      },
+      {
+        "id": "telok-blangah",
+        "name": "Telok Blangah",
+        "codes": [
+          "CC28"
+        ],
+        "lineIds": [
+          "CC"
+        ],
+        "searchLabel": "Telok Blangah · CC28"
+      },
+      {
+        "id": "thanggam",
+        "name": "Thanggam",
+        "codes": [
+          "SW4"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Thanggam · SW4"
+      },
+      {
+        "id": "tiong-bahru",
+        "name": "Tiong Bahru",
+        "codes": [
+          "EW17"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Tiong Bahru · EW17"
+      },
+      {
+        "id": "toa-payoh",
+        "name": "Toa Payoh",
+        "codes": [
+          "NS19"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Toa Payoh · NS19"
+      },
+      {
+        "id": "tongkang",
+        "name": "Tongkang",
+        "codes": [
+          "SW7"
+        ],
+        "lineIds": [
+          "SK"
+        ],
+        "searchLabel": "Tongkang · SW7"
+      },
+      {
+        "id": "tuas-crescent",
+        "name": "Tuas Crescent",
+        "codes": [
+          "EW31"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Tuas Crescent · EW31"
+      },
+      {
+        "id": "tuas-link",
+        "name": "Tuas Link",
+        "codes": [
+          "EW33"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Tuas Link · EW33"
+      },
+      {
+        "id": "tuas-west-road",
+        "name": "Tuas West Road",
+        "codes": [
+          "EW32"
+        ],
+        "lineIds": [
+          "EW"
+        ],
+        "searchLabel": "Tuas West Road · EW32"
+      },
+      {
+        "id": "ubi",
+        "name": "Ubi",
+        "codes": [
+          "DT27"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Ubi · DT27"
+      },
+      {
+        "id": "upper-changi",
+        "name": "Upper Changi",
+        "codes": [
+          "DT34"
+        ],
+        "lineIds": [
+          "DT"
+        ],
+        "searchLabel": "Upper Changi · DT34"
+      },
+      {
+        "id": "upper-thomson",
+        "name": "Upper Thomson",
+        "codes": [
+          "TE8"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Upper Thomson · TE8"
+      },
+      {
+        "id": "woodlands",
+        "name": "Woodlands",
+        "codes": [
+          "NS9",
+          "TE2"
+        ],
+        "lineIds": [
+          "NS",
+          "TE"
+        ],
+        "searchLabel": "Woodlands · NS9 / TE2"
+      },
+      {
+        "id": "woodlands-north",
+        "name": "Woodlands North",
+        "codes": [
+          "TE1"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Woodlands North · TE1"
+      },
+      {
+        "id": "woodlands-south",
+        "name": "Woodlands South",
+        "codes": [
+          "TE3"
+        ],
+        "lineIds": [
+          "TE"
+        ],
+        "searchLabel": "Woodlands South · TE3"
+      },
+      {
+        "id": "woodleigh",
+        "name": "Woodleigh",
+        "codes": [
+          "NE11"
+        ],
+        "lineIds": [
+          "NE"
+        ],
+        "searchLabel": "Woodleigh · NE11"
+      },
+      {
+        "id": "yew-tee",
+        "name": "Yew Tee",
+        "codes": [
+          "NS5"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Yew Tee · NS5"
+      },
+      {
+        "id": "yio-chu-kang",
+        "name": "Yio Chu Kang",
+        "codes": [
+          "NS15"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Yio Chu Kang · NS15"
+      },
+      {
+        "id": "yishun",
+        "name": "Yishun",
+        "codes": [
+          "NS13"
+        ],
+        "lineIds": [
+          "NS"
+        ],
+        "searchLabel": "Yishun · NS13"
+      }
+    ],
+    "counts": {
+      "physicalStations": 184,
+      "codedStops": 216
+    }
+  }
+}
