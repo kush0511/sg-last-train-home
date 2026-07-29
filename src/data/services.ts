@@ -4,6 +4,7 @@ import { parseClockTime } from "../lib/time";
 
 const codes = (lineId: LineId) => LINE_STOPS[lineId].map((stop) => stop.code);
 const reverse = <T,>(items: T[]) => [...items].reverse();
+const reverseLoop = <T,>(items: T[]) => [items[0], ...items.slice(1).reverse()];
 const repeated = (count: number, values: number[] = [2, 3]) =>
   Array.from({ length: count }, (_, index) => values[index % values.length]);
 
@@ -403,11 +404,11 @@ export const SERVICE_PATTERNS: ServicePattern[] = [
     dataAsOf: "2026-07-29"
   }),
   ...[
-    ["SK_EAST_INNER", skEast, "East Loop via Compassvale", "inner"],
-    ["SK_EAST_OUTER", reverse(skEast), "East Loop via Ranggung", "outer"],
-    ["SK_WEST_INNER", skWest, "West Loop via Cheng Lim", "inner"],
-    ["SK_WEST_OUTER", reverse(skWest), "West Loop via Renjong", "outer"]
-  ].map(([id, stops, destination, direction]) =>
+    ["SK_EAST_INNER", skEast, "East Loop via Compassvale", "inner", "12:35am"],
+    ["SK_EAST_OUTER", reverseLoop(skEast), "East Loop via Ranggung", "outer", "12:35am"],
+    ["SK_WEST_INNER", skWest, "West Loop via Cheng Lim", "inner", "12:37am"],
+    ["SK_WEST_OUTER", reverseLoop(skWest), "West Loop via Renjong", "outer", "12:37am"]
+  ].map(([id, stops, destination, direction, originLast]) =>
     makePattern({
       id: id as string,
       lineId: "SK",
@@ -416,18 +417,18 @@ export const SERVICE_PATTERNS: ServicePattern[] = [
       direction: direction as string,
       stops: stops as string[],
       circular: true,
-      estimatedOriginLast: parseClockTime("11:30pm"),
+      estimatedOriginLast: parseClockTime(originLast as string),
       lateHeadwayMinutes: 8,
       sourceId: "sbs-lrt-town-centre",
       dataAsOf: "2020-06-02"
     })
   ),
   ...[
-    ["PG_EAST_INNER", pgEast, "East Loop via Cove", "inner"],
-    ["PG_EAST_OUTER", reverse(pgEast), "East Loop via Damai", "outer"],
-    ["PG_WEST_INNER", pgWest, "West Loop via Sam Kee", "inner"],
-    ["PG_WEST_OUTER", reverse(pgWest), "West Loop via Soo Teck", "outer"]
-  ].map(([id, stops, destination, direction]) =>
+    ["PG_EAST_INNER", pgEast, "East Loop via Cove", "inner", "12:38am"],
+    ["PG_EAST_OUTER", reverseLoop(pgEast), "East Loop via Damai", "outer", "12:38am"],
+    ["PG_WEST_INNER", pgWest, "West Loop via Sam Kee", "inner", "12:40am"],
+    ["PG_WEST_OUTER", reverseLoop(pgWest), "West Loop via Soo Teck", "outer", "12:40am"]
+  ].map(([id, stops, destination, direction, originLast]) =>
     makePattern({
       id: id as string,
       lineId: "PG",
@@ -436,7 +437,7 @@ export const SERVICE_PATTERNS: ServicePattern[] = [
       direction: direction as string,
       stops: stops as string[],
       circular: true,
-      estimatedOriginLast: parseClockTime("11:30pm"),
+      estimatedOriginLast: parseClockTime(originLast as string),
       lateHeadwayMinutes: 8,
       sourceId: "sbs-lrt-town-centre",
       dataAsOf: "2020-06-02"

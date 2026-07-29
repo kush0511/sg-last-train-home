@@ -1,4 +1,9 @@
 import { adjustmentsForDate } from "../data/special-services";
+import {
+  PUBLISHED_LAST_DEPARTURES,
+  PUBLISHED_TIMETABLE_SOURCE_BY_PATTERN
+} from "../data/published-timetables";
+import { getServiceDay, timetableCategoryForDate } from "./calendar";
 import type { Confidence, ServicePattern } from "./types";
 
 export interface LastDeparture {
@@ -29,8 +34,21 @@ export function lastDepartureFor(
   let value: number;
   let confidence: Confidence;
   let note: string;
+  const category = timetableCategoryForDate(date);
+  const ordinaryCategory = getServiceDay(date).dayType;
+  const publishedForCategory =
+    PUBLISHED_LAST_DEPARTURES[pattern.id]?.[category]?.[code] ??
+    PUBLISHED_LAST_DEPARTURES[pattern.id]?.[ordinaryCategory]?.[code];
 
-  if (pattern.exactLastByStop?.[code] != null) {
+  if (publishedForCategory != null) {
+    value = publishedForCategory;
+    confidence = "exact";
+    note = `Operator-published ${
+      PUBLISHED_LAST_DEPARTURES[pattern.id]?.[category]?.[code] != null
+        ? category.replaceAll("-", " ")
+        : ordinaryCategory.replaceAll("-", " ")
+    } station cutoff`;
+  } else if (pattern.exactLastByStop?.[code] != null) {
     value = pattern.exactLastByStop[code];
     confidence = "exact";
     note = "Operator-published station cutoff";
@@ -60,5 +78,13 @@ export function lastDepartureFor(
     }
   }
 
-  return { value, confidence, sourceId: pattern.sourceId, note };
+  return {
+    value,
+    confidence,
+    sourceId:
+      publishedForCategory != null
+        ? (PUBLISHED_TIMETABLE_SOURCE_BY_PATTERN[pattern.id] ?? pattern.sourceId)
+        : pattern.sourceId,
+    note
+  };
 }

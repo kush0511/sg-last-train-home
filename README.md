@@ -32,6 +32,9 @@ snapshot. Check same-day notices before relying on it.
 - 2026–2027 Singapore public-holiday calendar
 - DTL July–September 2026 early closures/late openings
 - Sengkang West Loop April–October 2026 directional closure
+- Operator-published SMRT last departures by weekday, Saturday, Sunday/public holiday and public-holiday-eve category
+- Operator-published NEL/DTL station cutoffs for every ordinary service-day category,
+  plus exact Sengkang/Punggol LRT Town Centre loop cutoffs
 - Published SMRT National Day Eve 2026 extension anchors
 - Typo-tolerant station search with transposed-letter detection, station codes,
   abbreviations, line-name queries, aliases, highlighted matches, interchange codes,
@@ -80,9 +83,11 @@ Read [the full methodology](docs/METHODOLOGY.md), [source inventory](docs/DATA_S
 
 ## Data refresh and failure safety
 
-The repository does **not** scrape operator websites. Their usage terms were reviewed
-and automated copying is not an acceptable update mechanism for this project.
-Restricted pages are opened manually for factual verification and provenance.
+The repository has no scheduled operator scraper. Bounded SMRT and SBS Transit
+retrievals were used to normalise current station-level last departures; they retain
+only the factual times needed for calculation, never raw HTML or branding. Future
+operator timetable imports require an explicit maintainer decision. Public-holiday
+dates use the official open-data API and are refreshed annually through a review PR.
 
 The weekly data-health workflow validates the committed snapshot and fails visibly
 after its freshness threshold. A malformed replacement is rejected by the snapshot

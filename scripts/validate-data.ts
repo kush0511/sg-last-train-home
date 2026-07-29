@@ -9,8 +9,13 @@ import {
   STOP_BY_CODE
 } from "../src/data/network";
 import { SERVICE_PATTERNS } from "../src/data/services";
+import {
+  PUBLISHED_LAST_DEPARTURES,
+  PUBLISHED_TIMETABLE_SOURCE_BY_PATTERN
+} from "../src/data/published-timetables";
 import { SERVICE_ADJUSTMENTS } from "../src/data/special-services";
 import { SOURCE_BY_ID } from "../src/data/sources";
+import publicHolidayData from "../src/data/public-holidays.json" with { type: "json" };
 
 const errors: string[] = [];
 const assert = (condition: unknown, message: string) => {
@@ -19,6 +24,11 @@ const assert = (condition: unknown, message: string) => {
 
 assert(manifest.datasetVersion === "2026.07.29", "Manifest version is unexpected");
 assert(manifest.networkAsOf === NETWORK_AS_OF, "Manifest/network as-of dates disagree");
+assert(
+  JSON.stringify(manifest.publicHolidayYears) ===
+    JSON.stringify([...new Set(Object.keys(publicHolidayData.holidays).map((date) => Number(date.slice(0, 4))))]),
+  "Manifest/public-holiday years disagree"
+);
 assert(STATIONS.length === manifest.stationCount, "Station count disagrees with manifest");
 assert(STOP_BY_CODE.size === manifest.codedStopCount, "Unique coded-stop count disagrees");
 assert(
@@ -112,6 +122,68 @@ for (const adjustment of SERVICE_ADJUSTMENTS) {
     assert(Boolean(pattern), `${adjustment.id}: unknown anchor pattern ${patternId}`);
     assert(Boolean(pattern?.stops.includes(anchor.code)), `${adjustment.id}: unknown anchor code`);
   }
+}
+
+const timetableCategories = new Set([
+  "weekday",
+  "saturday",
+  "sunday-public-holiday",
+  "public-holiday-eve"
+]);
+for (const [patternId, categories] of Object.entries(PUBLISHED_LAST_DEPARTURES)) {
+  const pattern = SERVICE_PATTERNS.find((candidate) => candidate.id === patternId);
+  assert(Boolean(pattern), `Published timetable: unknown pattern ${patternId}`);
+  assert(
+    Boolean(PUBLISHED_TIMETABLE_SOURCE_BY_PATTERN[patternId]),
+    `Published timetable: missing source for ${patternId}`
+  );
+  for (const [category, times] of Object.entries(categories ?? {})) {
+    assert(timetableCategories.has(category), `Published timetable: invalid category ${category}`);
+    for (const [code, time] of Object.entries(times ?? {})) {
+      assert(Boolean(pattern?.stops.includes(code)), `${patternId}: timetable has unknown stop ${code}`);
+      assert(
+        Number.isInteger(time) && time >= 5 * 60 && time <= 29 * 60,
+        `${patternId}/${category}/${code}: invalid departure time`
+      );
+    }
+  }
+}
+
+const ordinaryTimetableCategories = [
+  "weekday",
+  "saturday",
+  "sunday-public-holiday"
+] as const;
+for (const pattern of SERVICE_PATTERNS.filter((candidate) =>
+  ["NE", "DT"].includes(candidate.lineId)
+)) {
+  const expectedCodes = pattern.stops.slice(0, -1);
+  for (const category of ordinaryTimetableCategories) {
+    const actual = PUBLISHED_LAST_DEPARTURES[pattern.id]?.[category] ?? {};
+    for (const code of expectedCodes) {
+      assert(actual[code] != null, `${pattern.id}/${category}: missing SBS cutoff at ${code}`);
+    }
+  }
+}
+
+for (const pattern of SERVICE_PATTERNS.filter((candidate) =>
+  ["SK", "PG"].includes(candidate.lineId)
+)) {
+  const townCentre = pattern.lineId === "SK" ? "STC" : "PTC";
+  assert(
+    pattern.stops[0] === townCentre,
+    `${pattern.id}: LRT loop must start at its published Town Centre anchor`
+  );
+  for (const category of ordinaryTimetableCategories) {
+    assert(
+      PUBLISHED_LAST_DEPARTURES[pattern.id]?.[category]?.[townCentre] != null,
+      `${pattern.id}/${category}: missing SBS town-centre cutoff`
+    );
+  }
+  assert(
+    pattern.estimatedOriginLast != null,
+    `${pattern.id}: missing station-level conservative service horizon`
+  );
 }
 
 const codedStationsWithoutService = STATIONS.filter(

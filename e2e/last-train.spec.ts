@@ -265,7 +265,25 @@ test("15 · controls never overlap and interactive controls stay square", async 
   }
 });
 
-test("16 · typography is unified and the header train rides the rail", async ({ page }) => {
+test("16 · mobile date value is centered within its field", async ({ page }) => {
+  const alignment = await page.evaluate(() => {
+    const input = document.querySelector('input[type="date"]')!;
+    const value = getComputedStyle(input, "::-webkit-date-and-time-value");
+    return {
+      viewportWidth: window.innerWidth,
+      textAlign: value.textAlign,
+      textPaddingLeft: value.paddingLeft,
+      textPaddingRight: value.paddingRight
+    };
+  });
+
+  if (alignment.viewportWidth < 896) {
+    expect(alignment.textAlign).toBe("center");
+    expect(alignment.textPaddingLeft).toBe(alignment.textPaddingRight);
+  }
+});
+
+test("17 · typography is unified and the header train rides the rail", async ({ page }) => {
   const visual = await page.evaluate(() => {
     const style = (selector: string) =>
       getComputedStyle(document.querySelector(selector) as HTMLElement);

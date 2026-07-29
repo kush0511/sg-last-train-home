@@ -1,4 +1,6 @@
 import { useMemo, useState } from "preact/hooks";
+import { useEffect } from "preact/hooks";
+import type { ComponentChildren } from "preact";
 import { StationPicker } from "./components/StationPicker";
 import {
   LINES,
@@ -8,6 +10,7 @@ import {
 } from "./data/network";
 import { PATTERN_BY_ID } from "./data/services";
 import { SOURCE_BY_ID } from "./data/sources";
+import { PUBLIC_HOLIDAYS } from "./lib/calendar";
 import { calculateLastTrain } from "./lib/routing";
 import { resolveStationInput } from "./lib/station-search";
 import {
@@ -21,6 +24,9 @@ import type { CalculationResult, JourneyResult, Station } from "./lib/types";
 const DEFAULT_ORIGIN = STATIONS.find((station) => station.id === "farrer-park")!;
 const DEFAULT_DESTINATION = STATIONS.find((station) => station.id === "lakeside")!;
 const DESTINATION_STORAGE_KEY = "last-train-home.destination";
+const SUPPORTED_DATES = Object.keys(PUBLIC_HOLIDAYS);
+const EARLIEST_SUPPORTED_DATE = SUPPORTED_DATES.at(0) ?? "2026-01-01";
+const LATEST_SUPPORTED_DATE = SUPPORTED_DATES.at(-1) ?? "2027-12-31";
 
 function preferredDestination(): Station {
   if (typeof window === "undefined") return DEFAULT_DESTINATION;
@@ -96,6 +102,38 @@ function MovingTrain() {
       <circle cx="49" cy="19" r="2.5" />
       <path class="moving-train__spark" d="M1 9h3M0 13h4" />
     </svg>
+  );
+}
+
+function BoardDrawer({
+  className,
+  children
+}: {
+  className?: string;
+  children: ComponentChildren;
+}) {
+  const [desktop, setDesktop] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 56rem)").matches
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 56rem)");
+    const sync = () => setDesktop(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
+
+  return (
+    <details
+      class={className}
+      open={desktop || undefined}
+      onToggle={(event) => {
+        if (desktop && !event.currentTarget.open) event.currentTarget.open = true;
+      }}
+    >
+      {children}
+    </details>
   );
 }
 
@@ -185,7 +223,11 @@ function JourneyBoard({
               const to = STATION_BY_ID.get(ride.toStationId)!;
               const transfer = result.transfers[index];
               return (
-                <div class="compact-leg" key={`${ride.patternId}-${index}`}>
+                <div
+                  class="compact-leg"
+                  key={`${ride.patternId}-${index}`}
+                  style={{ "--line": LINES[pattern.lineId].colour }}
+                >
                   <div
                     class="leg-rail"
                     style={{ "--line": LINES[pattern.lineId].colour }}
@@ -233,7 +275,7 @@ function JourneyBoard({
       </div>
 
       <div class="board-drawers">
-        <details class="technical-drawer">
+        <BoardDrawer className="technical-drawer">
           <summary>
             <span>How this was calculated</span>
             <span aria-hidden="true">＋</span>
@@ -281,10 +323,10 @@ function JourneyBoard({
               from the station entrance.
             </p>
           </div>
-        </details>
+        </BoardDrawer>
 
         {alternatives.length ? (
-          <details class="technical-drawer alternatives-drawer">
+          <BoardDrawer className="technical-drawer alternatives-drawer">
             <summary>
               <span>{alternatives.length} other route{alternatives.length === 1 ? "" : "s"}</span>
               <span aria-hidden="true">＋</span>
@@ -302,7 +344,7 @@ function JourneyBoard({
                 </div>
               ))}
             </div>
-          </details>
+          </BoardDrawer>
         ) : null}
       </div>
     </section>
@@ -433,8 +475,8 @@ export function App() {
                 name="date"
                 aria-label="Service date · Singapore time"
                 value={date}
-                min="2026-01-01"
-                max="2027-12-31"
+                min={EARLIEST_SUPPORTED_DATE}
+                max={LATEST_SUPPORTED_DATE}
                 onInput={(event) => {
                   setDate(event.currentTarget.value);
                   setDirty(true);

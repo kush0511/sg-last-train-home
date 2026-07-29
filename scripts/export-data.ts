@@ -9,6 +9,7 @@ import {
   STOP_BY_CODE
 } from "../src/data/network";
 import { SERVICE_PATTERNS } from "../src/data/services";
+import { PUBLISHED_LAST_DEPARTURES } from "../src/data/published-timetables";
 import { SERVICE_ADJUSTMENTS } from "../src/data/special-services";
 import { SOURCES } from "../src/data/sources";
 import { TRANSFER_RULES } from "../src/data/transfers";
@@ -60,6 +61,7 @@ const files = {
   }),
   [`timetables.v${DATASET_VERSION}.json`]: envelope("timetables", {
     patterns: SERVICE_PATTERNS,
+    publishedLastDepartures: PUBLISHED_LAST_DEPARTURES,
     adjustments: SERVICE_ADJUSTMENTS
   }),
   [`transfers.v${DATASET_VERSION}.json`]: envelope("transfers", {

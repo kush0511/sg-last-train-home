@@ -11,6 +11,11 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "npm run build && playwright test",
     "data:export": "tsx scripts/export-data.ts",
+    "data:import:smrt-timetables": "tsx scripts/import-smrt-timetables.ts",
+    "data:import:sbs-timetables": "tsx scripts/import-sbs-timetables.ts",
+    "data:import:operator-timetables": "npm run data:import:smrt-timetables && npm run data:import:sbs-timetables",
+    "data:audit:timetable-coverage": "tsx scripts/audit-timetable-coverage.ts",
+    "data:refresh:public-holidays": "tsx scripts/refresh-public-holidays.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "check:freshness": "tsx scripts/check-freshness.ts",
     "check": "npm run validate:data && npm run test && npm run build"

@@ -602,6 +602,18 @@ main {
   text-align: center;
 }
 
+/* Chromium reserves room for the calendar icon inside date fields. Center the
+   editable value itself on narrow screens instead of centering the remaining
+   text area to the left of that icon. */
+@media (max-width: 55.99rem) {
+  .control-strip input[type="date"]::-webkit-date-and-time-value,
+  .control-strip input[type="date"]::-webkit-datetime-edit {
+    margin: auto;
+    padding: 0;
+    text-align: center;
+  }
+}
+
 .control-strip select {
   appearance: none;
   padding-right: 1.15rem;
@@ -1327,8 +1339,9 @@ main {
 
 @media (min-width: 56rem) {
   .app-shell {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    width: min(100%, 112rem);
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 
   .rail-header {
@@ -1355,8 +1368,8 @@ main {
 
   .route-controls {
     display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(24rem, 0.92fr);
-    gap: 1rem;
+    grid-template-columns: minmax(34rem, 1.35fr) minmax(25rem, 0.82fr);
+    gap: 1.25rem;
     align-items: end;
   }
 
@@ -1444,12 +1457,12 @@ main {
   .board-core {
     display: grid;
     min-height: 15rem;
-    grid-template-columns: minmax(19rem, 0.82fr) minmax(0, 1.18fr);
+    grid-template-columns: minmax(24rem, 0.68fr) minmax(0, 1.32fr);
   }
 
   .board-time {
     min-height: 0;
-    padding: 1.35rem 1.4rem;
+    padding: 1.5rem 1.6rem;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -1463,7 +1476,7 @@ main {
 
   .board-time time {
     margin-top: 0.22rem;
-    font-size: clamp(4.5rem, 6.2vw, 6.5rem);
+    font-size: clamp(4.35rem, 5.6vw, 6.25rem);
   }
 
   .arrival-time {
@@ -1503,9 +1516,9 @@ main {
   .compact-route {
     --route-spine-x: 1.47rem;
     min-height: 0;
-    padding: 1rem 0.9rem 0.65rem;
+    padding: 1rem 1.1rem 0.8rem;
     flex: 1;
-    justify-content: space-evenly;
+    justify-content: stretch;
     gap: 0.7rem;
   }
 
@@ -1515,12 +1528,30 @@ main {
   }
 
   .compact-leg {
+    min-height: 0;
+    flex: 1;
     grid-template-columns: 1.1rem minmax(0, 1fr);
+    grid-template-rows: minmax(3.85rem, 1fr) auto;
     column-gap: 0.68rem;
   }
 
   .leg-rail {
-    min-height: 3.25rem;
+    min-height: 0;
+    grid-row: 1;
+  }
+
+  .leg-content {
+    min-height: 0;
+    padding: 0.8rem 0.9rem;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #e3d7c4;
+    border-left: 3px solid var(--line);
+    background:
+      linear-gradient(90deg, rgba(226, 238, 229, 0.54), rgba(255, 250, 240, 0.72)),
+      var(--surface);
   }
 
   .leg-heading {
@@ -1547,6 +1578,7 @@ main {
   }
 
   .transfer-line {
+    align-self: start;
     padding: 0.36rem 0.5rem;
     font-size: 0.63rem;
   }
@@ -1569,9 +1601,29 @@ main {
   }
 
   .technical-content {
+    max-height: 7.25rem;
     padding-right: 0.9rem;
     padding-left: 0.9rem;
     font-size: 0.67rem;
+  }
+
+  /* Desktop has the room to keep the calculation trail and alternate routes
+     visible together. They stay as compact, independently scrollable panels
+     instead of hiding useful context behind accordions. */
+  .board-drawers {
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.85fr);
+  }
+
+  .board-drawers .technical-drawer[open] {
+    grid-column: auto;
+  }
+
+  .board-drawers .technical-drawer[open] + .technical-drawer {
+    border-left: 1px solid var(--rule);
+  }
+
+  .technical-drawer summary > span:last-child {
+    display: none;
   }
 
   .rail-footer {

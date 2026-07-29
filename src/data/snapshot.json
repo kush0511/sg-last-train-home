@@ -7,7 +7,10 @@
   "stationCount": 184,
   "codedStopCount": 216,
   "servicePatternCount": 30,
-  "publicHolidayYears": [2026, 2027],
+  "publicHolidayYears": [
+    2026,
+    2027
+  ],
   "freshness": {
     "warnAfterDays": 30,
     "failAfterDays": 45

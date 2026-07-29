@@ -98,11 +98,26 @@ A direct, unadjusted NEL/DTL result can retain an exact published-departure labe
 Once the calculation steps back by a headway, transfers, or applies an early closure,
 the journey becomes estimated.
 
+The one-time normalised snapshot expands the operator's columns into the app's
+weekday, Saturday and Sunday/public-holiday categories. DTL publishes one last-train
+column for all days; NEL publishes weekday and weekend/public-holiday columns.
+They are stored separately even where the current values match, so a future operator
+change cannot silently collapse the date classes.
+
+### SBS Transit-operated Sengkang and Punggol LRT
+
+SBS Transit publishes the daily last departure from Sengkang or Punggol Town Centre
+for each East and West loop, but not a station-by-station last-train table. The Town
+Centre value is therefore exact. Other LRT stops are conservatively propagated using
+the modelled loop order and late-service segment times and remain estimated.
+
 ### SMRT-operated MRT and LRT
 
 SMRT exposes station pages and selected event timetables, but not a complete reusable
-working timetable. The app uses selected station anchors and intentionally
-conservative service curves. Every result touching those curves is estimated.
+working timetable. A bounded one-time import supplies published station last departures
+for weekday, Saturday, Sunday/public-holiday and public-holiday-eve categories. A
+missing category or service pattern falls back to the conservative service curve and
+remains estimated.
 
 The ordinary late-night headway is seven minutes (twelve for the airport shuttle and
 eight for LRT). This is a conservative planning assumption, not a claim that trains
@@ -171,8 +186,8 @@ operationally absurd cross-island loop from winning.
 
 - No live disruption feed.
 - No guarantee that a published final train accepts every downstream connection.
-- SMRT/LRT station-level final departures are estimates unless a specific anchor is
-  published.
+- SMRT station-level final departures are exact only where a published category value
+  is present; unrepresented services remain estimates.
 - LRT town-centre source labels are old; station-level timings are deliberately
   modelled rather than presented as exact.
 - Walking times vary by platform, lift/escalator status, mobility, crowding and gate

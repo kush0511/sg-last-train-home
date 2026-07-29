@@ -1,23 +1,38 @@
 # Data update runbook
 
-The update process is intentionally manual because the relevant operator terms do not
-permit an unattended scraper.
+Operator timetable changes remain a reviewed update because there is no reusable
+timetable API. The SMRT importer is deliberately not scheduled; run it only after an
+explicit review decision, then inspect the normalised diff. Public-holiday dates are
+the exception: the annual workflow refreshes them from the official open-data API and
+opens a PR for review.
 
 ## Routine review
 
 1. Open the LTA rail-network page and current system map.
 2. Confirm every operating station/code and note openings, closures or renamed stops.
 3. Open the LTA service-announcement page and record dated adjustments.
-4. Open the current SBS Transit NEL/DTL first/last-train tables.
+4. Open the current SBS Transit NEL/DTL/LRT first/last-train tables.
 5. Open affected SMRT station or event pages for factual anchors.
-6. Check the Ministry of Manpower holiday list when a new calendar year is published.
+6. Review the annual public-holiday refresh PR from the Ministry of Manpower open-data API.
 7. Record the retrieval date, publisher update label, URL, scope and authority in
    `src/data/sources.ts`.
 8. Edit the smallest reviewable data module and bump `datasetVersion`,
    `generatedAt`, `networkAsOf`, and counts in `src/data/snapshot.json`.
 9. Run `npm run data:export` and review the versioned JSON diff in `data/`.
 
-Do not copy an entire page or automate access around an operator restriction.
+Do not add a scheduled operator scraper or commit raw source HTML.
+
+For a bounded, manually initiated factual refresh:
+
+```bash
+npm run data:import:operator-timetables
+npm run data:audit:timetable-coverage
+```
+
+The import retains only normalised last-departure values. SBS Transit publishes
+station-specific NEL and DTL cutoffs for all ordinary service-day classes. For
+Sengkang and Punggol LRT it publishes only the town-centre cutoff for each loop;
+other LRT stops therefore remain clearly labelled conservative estimates.
 
 ## Required gates
 

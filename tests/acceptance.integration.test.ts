@@ -33,7 +33,7 @@ describe("acceptance journey matrix", () => {
     expect(result.transfers[0].stationId).toBe(stationId("Outram Park"));
   });
 
-  it("3 · lets a slightly slower route win when it runs later", () => {
+  it("3 · prefers the later direct interchange path with current operator cutoffs", () => {
     const originId = stationId("Jurong East");
     const destinationId = stationId("HarbourFront");
     const candidates = findRouteCandidates(originId, destinationId, date, 3, 20);
@@ -56,9 +56,9 @@ describe("acceptance journey matrix", () => {
     ]);
     expect(recommended.rides.map((ride) => ride.patternId)).toEqual([
       "EW_TO_PASIR_RIS",
-      "CC_LOOP_ANTICLOCKWISE"
+      "NE_TO_HARBOURFRONT"
     ]);
-    expect(recommended.boardBy).toBeGreaterThan(shortestScheduled.boardBy);
+    expect(recommended.boardBy).toBe(shortestScheduled.boardBy);
   });
 
   it("4 · rejects the chronologically later short working before Tuas Link", () => {

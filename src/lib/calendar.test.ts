@@ -7,7 +7,7 @@ describe("Singapore service calendar", () => {
       dayType: "sunday-public-holiday",
       publicHoliday: "National Day"
     });
-    expect(getServiceDay("2026-08-10").publicHoliday).toBe("National Day observed");
+    expect(getServiceDay("2026-08-10").publicHoliday).toBe("National Day (Observed)");
   });
 
   it("recognises a public-holiday eve without assuming an extension", () => {

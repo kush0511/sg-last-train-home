@@ -30,9 +30,9 @@ export const SOURCES: SourceRecord[] = [
     url: "https://www.sbstransit.com.sg/first-train-last-train",
     retrievedAt: "2026-07-29",
     dataAsOf: "2025-02-28",
-    use: "Station-specific NEL and DTL last-departure cutoffs",
+    use: "Station-specific NEL/DTL last-departure cutoffs and Sengkang/Punggol LRT Town Centre loop cutoffs",
     authority: "official",
-    reusePolicy: "Manually transcribed factual cutoffs; source terms reviewed"
+    reusePolicy: "Bounded one-time retrieval of normalised factual cutoffs; raw HTML is not committed"
   },
   {
     id: "sbs-travel-time",
@@ -51,9 +51,9 @@ export const SOURCES: SourceRecord[] = [
     publisher: "SMRT",
     url: "https://journey.smrt.com.sg/journey/station_info/outram-park/first-and-last-train/",
     retrievedAt: "2026-07-29",
-    use: "Selected EWL anchors used to calibrate a conservative estimate",
+    use: "One-time normalised SMRT station last-departure tables by weekday, Saturday, Sunday/public holiday and public-holiday eve",
     authority: "official",
-    reusePolicy: "Referenced only; no scraper or raw-page republication"
+    reusePolicy: "Bounded one-time retrieval, normalised factual times only; raw HTML is not committed and this source is never scheduled"
   },
   {
     id: "lta-service-adjustments",
@@ -81,12 +81,12 @@ export const SOURCES: SourceRecord[] = [
     id: "mom-public-holidays",
     title: "Public holidays",
     publisher: "Ministry of Manpower",
-    url: "https://www.mom.gov.sg/employment-practices/public-holidays",
+    url: "https://data.gov.sg/api/action/datastore_search?resource_id=d_8ef23381f9417e4d4254ee8b4dcdb176&limit=500",
     retrievedAt: "2026-07-29",
     dataAsOf: "2026-07-29",
     use: "2026 and 2027 public-holiday calendar and observed days",
     authority: "official",
-    reusePolicy: "Calendar facts referenced with attribution"
+    reusePolicy: "Official open-data API; annual GitHub Action opens a review PR"
   },
   {
     id: "community-transfer-times",
@@ -149,7 +149,7 @@ export const SOURCES: SourceRecord[] = [
     url: "https://www.sbstransit.com.sg/first-train-last-train",
     retrievedAt: "2026-07-29",
     dataAsOf: "2020-06-02",
-    use: "Town-centre LRT service horizon; station-level departures remain estimated",
+    use: "Town-centre LRT service horizon; non-town-centre departures remain estimated",
     authority: "official",
     reusePolicy: "Referenced with conservative modelling"
   }

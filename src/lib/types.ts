@@ -54,6 +54,8 @@ export interface ServicePattern {
 
 export type DayType = "weekday" | "saturday" | "sunday-public-holiday";
 
+export type TimetableCategory = DayType | "public-holiday-eve";
+
 export interface ServiceDay {
   date: string;
   dayType: DayType;

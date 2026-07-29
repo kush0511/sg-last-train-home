@@ -9,12 +9,12 @@ the app lives in [`src/data/sources.ts`](../src/data/sources.ts).
 | --- | --- | --- | --- | --- |
 | Operating network, codes and topology | Land Transport Authority | [Rail Network](https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network.html) and current system map | Official | Manually normalised network |
 | CCL6 opening/topology | Land Transport Authority | [Circle Line 6](https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/circle_line_6.html) | Official | Operating status and loop completion |
-| NEL/DTL final departures | SBS Transit | [First Train / Last Train](https://www.sbstransit.com.sg/first-train-last-train) | Official | Station-specific factual cutoffs |
+| NEL/DTL/LRT final departures | SBS Transit | [First Train / Last Train](https://www.sbstransit.com.sg/first-train-last-train) | Official | Station-specific NEL/DTL cutoffs and LRT town-centre loop cutoffs |
 | NEL/DTL/LRT running-time cross-check | SBS Transit | [Train travel times](https://www.sbstransit.com.sg/travel-time) | Official | Manual plausibility check against official line diagrams |
-| Selected EWL anchors | SMRT | [Outram Park first/last train](https://journey.smrt.com.sg/journey/station_info/outram-park/first-and-last-train/) and other station pages | Official | Conservative EWL model calibration |
+| SMRT station last departures | SMRT | [Station first/last train](https://journey.smrt.com.sg/journey/station_info/outram-park/first-and-last-train/) pages | Official | One-time normalised station cutoffs by service category |
 | 2026 service adjustments | Land Transport Authority | [Train service announcements](https://www.lta.gov.sg/content/ltagov/en/map/announcement.html) | Official | DTL and Sengkang LRT dated rules |
 | National Day Eve extension | SMRT | [8 August 2026 extension](https://www.smrt.com.sg/news-publications/newsroom/service-announcements/last-bus-train-timings-extension-for-national-day-eve-2026/) | Official | Selected event departure anchors |
-| 2026–2027 holidays | Ministry of Manpower | [Public holidays](https://www.mom.gov.sg/employment-practices/public-holidays) | Official | Calendar and observed days |
+| 2026–2027 holidays | Ministry of Manpower | [Open-data holiday dataset](https://data.gov.sg/api/action/datastore_search?resource_id=d_8ef23381f9417e4d4254ee8b4dcdb176&limit=500) | Official | Calendar and observed days; annual review PR |
 | Interchange walks | Community maintainers | [Transfer-time spreadsheet](https://docs.google.com/spreadsheets/d/1e-Tuf6rHBFsgsuFN7XqbFL8ec_vdRjQw/edit) | Community | Direction-specific walking estimates |
 
 ## Authority and uncertainty rules
@@ -22,6 +22,10 @@ the app lives in [`src/data/sources.ts`](../src/data/sources.ts).
 - “Official” describes the publisher, not a promise that the source will never change.
 - A complete operator station cutoff may be called exact only for the direct departure
   to which it applies.
+- The SBS Transit table supplies every operating NEL and DTL origin in both
+  directions. Its Sengkang and Punggol LRT tables supply only Town Centre
+  departures, so all other LRT station cutoffs are estimates propagated from
+  those published loop horizons.
 - Community transfer measurements are rounded up to whole minutes and always labelled
   as estimates.
 - Project-authored service curves, segment times, late headways, short workings, and
@@ -40,9 +44,9 @@ the app lives in [`src/data/sources.ts`](../src/data/sources.ts).
   the larger whole-minute segment is preferred for a safe connection.
 - Public synthetic GTFS data that assumes a uniform three minutes per station conflicts
   with operator diagrams and was rejected rather than blended into the model.
-- Complete SMRT adjacent-station and working-timetable data could not be found under
-  reusable terms. The project uses explicitly labelled conservative values instead of
-  borrowing precision from an unlicensed aggregator.
+- The source does not expose a reusable working timetable. The app retains only its
+  one-time normalised station departure cutoffs; remaining unrepresented service
+  patterns use explicitly labelled conservative values.
 
 ## Usage-term review
 
@@ -53,12 +57,14 @@ also restrict copying and public display.
 
 Accordingly:
 
-- there is no scheduled scraper;
+- there is no scheduled operator scraper;
 - the project does not mirror HTML, images, branding, or raw pages;
-- source pages are manually reviewed;
+- bounded one-time SMRT and SBS Transit retrievals are normalised into reviewable
+  values only;
 - only the factual values necessary for calculation are normalised;
 - each use is attributed and its uncertainty is exposed;
-- automated freshness checks inspect the committed metadata, not restricted websites.
+- automated freshness checks inspect committed metadata; the only scheduled source
+  refresh is the official public-holiday open-data API.
 
 This is a product-engineering policy, not legal advice. If an operator provides a
 licensed API or reusable feed, it should replace the manual snapshot.

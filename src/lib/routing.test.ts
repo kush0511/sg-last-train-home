@@ -125,7 +125,7 @@ describe("backward last-train calculation", () => {
       value: 24 * 60 + 30,
       confidence: "exact"
     });
-    expect(lastDepartureFor(pattern, "EW13", "2026-08-09").value).not.toBe(24 * 60 + 30);
+    expect(lastDepartureFor(pattern, "EW13", "2026-08-11").value).not.toBe(24 * 60 + 30);
   });
 
   it("rejects same-station and invalid-buffer requests", () => {
