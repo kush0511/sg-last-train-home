@@ -83,9 +83,9 @@ repeated after Pages deployment:
 - Repository:
   <https://github.com/kush0511/sg-last-train-home>
 - GitHub Pages workflow:
-  [successful run 30419248370](https://github.com/kush0511/sg-last-train-home/actions/runs/30419248370)
+  [successful run 30421664813](https://github.com/kush0511/sg-last-train-home/actions/runs/30421664813)
 - Full CI workflow:
-  [successful run 30419248400](https://github.com/kush0511/sg-last-train-home/actions/runs/30419248400)
+  [successful run 30421664717](https://github.com/kush0511/sg-last-train-home/actions/runs/30421664717)
 - The deployed HTML, CSS and JavaScript repository-path assets returned HTTP 200
   with HTTPS enforcement.
 - Fresh production browser contexts passed all 51 cases at 320×568, iPhone 13
