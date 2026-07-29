@@ -12,8 +12,8 @@ Environment: Node 24, Chromium mobile and desktop projects
 | `npm test` | Service-day time, calendar, fallback/staleness, branch/loop/terminus graph, reverse scheduling, buffers, transfers, overrides, typo-tolerant station ranking | Pass — 49 tests |
 | `npm run test:coverage` | Pure calculation and search modules | Pass — 89.81% statements, 83.13% branches, 93.50% functions, 93.01% lines |
 | `npm run build` | Strict TypeScript and Vite production bundle | Pass |
-| `npm run test:e2e` | Fifteen user-visible scenarios in 320×568, iPhone 13 and desktop Chromium, with page/console error capture | Pass — 45 checks |
-| `PLAYWRIGHT_BASE_URL=… npx playwright test` | The same 45 checks in fresh contexts against the deployed repository path | Pass — 45 checks |
+| `npm run test:e2e` | Seventeen user-visible scenarios in 320×568, iPhone 13 and desktop Chromium, with page/console error capture | Pass — 51 checks |
+| `PLAYWRIGHT_BASE_URL=… npx playwright test` | The same 51 checks in fresh contexts against the deployed repository path | Pass — 51 checks |
 | `npm run check:freshness` | 30-day warning / 45-day failure policy | Pass |
 
 ## Validation sample
@@ -57,18 +57,22 @@ families.
 Checked against the production build served locally; the URL-specific checks are
 repeated after Pages deployment:
 
-- [x] 320×568: full controls, primary recommendation, both drawers and footer fit
+- [x] 320×568: full controls, primary recommendation, compact drawer rail and footer fit
   without horizontal or page-level vertical overflow
-- [x] 393×568: station fields, date, buffer and square action controls occupy separate
-  non-overlapping grid cells; the complete result and footer remain above the fold
-- [x] 1440×900: horizontal controls lead directly into a natural-height, two-column
-  departure board without manufacturing empty panel space
+- [x] 393×664: the protected date and buffer row plus full-width square action button
+  occupy separate non-overlapping grid cells; the complete result remains above the fold
+- [x] 1440×900: horizontal controls lead directly into a full-height two-column departure
+  board whose timeline uses the available viewport instead of leaving a dead lower half
 - [x] keyboard: visible focus, arrow-key wrap, Home/End, Enter selection and Escape close
 - [x] screen-reader semantics: named comboboxes, listbox/option state, live result,
   service notices and error role
-- [x] reduced motion: the media query disables transition duration and smooth scrolling
+- [x] reduced motion: the header train becomes static and transitions are suppressed
+- [x] optional calculation and alternative-route details open without colliding with
+  the primary journey; narrow screens scroll only after a secondary drawer is opened
 - [x] square-control invariant: every button, input and select computes to zero border radius
-- [x] console/page errors: none across all 45 browser checks
+- [x] unified type: one self-hosted variable family is used for the wordmark, controls,
+  station names, route details and departure clock
+- [x] console/page errors: none across all 51 browser checks
 - [x] production source links resolve to the cited SBS Transit, SMRT and community pages
 - [x] production direct navigation, refresh and repository-root asset paths return 200
 
@@ -84,10 +88,10 @@ repeated after Pages deployment:
   [successful run 30419248400](https://github.com/kush0511/sg-last-train-home/actions/runs/30419248400)
 - The deployed HTML, CSS and JavaScript repository-path assets returned HTTP 200
   with HTTPS enforcement.
-- Fresh production browser contexts passed all 45 cases at 320×568, iPhone 13
+- Fresh production browser contexts passed all 51 cases at 320×568, iPhone 13
   and desktop sizes.
 - Visual captures:
-  [mobile 393×568](screenshots/production-mobile.png) and
+  [mobile 393×664](screenshots/production-mobile.png) and
   [desktop 1440×900](screenshots/production-desktop.png).
 
 ## Residual limitations

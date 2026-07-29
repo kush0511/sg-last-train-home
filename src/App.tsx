@@ -84,6 +84,21 @@ function TrainMark() {
   );
 }
 
+function MovingTrain() {
+  return (
+    <svg class="moving-train" viewBox="0 0 64 24" aria-hidden="true">
+      <path class="moving-train__body" d="M5 5h45c4.5 0 8.2 2.4 10 6.2V17H5Z" />
+      <path class="moving-train__cab" d="M49 5v7h10.7" />
+      <path class="moving-train__door" d="M34 7h8v10h-8z" />
+      <path class="moving-train__window" d="M9 8h8v4H9zm11 0h8v4h-8z" />
+      <path class="moving-train__base" d="M3 17h58" />
+      <circle cx="15" cy="19" r="2.5" />
+      <circle cx="49" cy="19" r="2.5" />
+      <path class="moving-train__spark" d="M1 9h3M0 13h4" />
+    </svg>
+  );
+}
+
 function JourneyBoard({
   result,
   dataStale,
@@ -217,77 +232,79 @@ function JourneyBoard({
         <span>Data 29 Jul</span>
       </div>
 
-      <details class="technical-drawer">
-        <summary>
-          <span>How this was calculated</span>
-          <span aria-hidden="true">＋</span>
-        </summary>
-        <div class="technical-content">
-          <ol>
-            {[...result.rides].reverse().map((ride) => {
-              const pattern = PATTERN_BY_ID.get(ride.patternId)!;
-              return (
-                <li key={`${ride.patternId}-${ride.fromCode}`}>
-                  <strong>{pattern.label}</strong> at {ride.fromCode}: last source time{" "}
-                  {formatServiceTime(ride.publishedLastDeparture)}
-                  {ride.steppedBackByMinutes
-                    ? `, stepped back ${ride.steppedBackByMinutes} min for the connection.`
-                    : ", no headway step-back."}
-                </li>
-              );
-            })}
-          </ol>
-          {result.warnings.length ? (
-            <ul>
-              {result.warnings.map((warning) => (
-                <li key={warning}>{warning}</li>
-              ))}
-            </ul>
-          ) : null}
-          {activeNotices.length ? (
-            <div class="drawer-notices">
-              {activeNotices.map((notice) => (
-                <p key={notice}>{notice}</p>
-              ))}
-            </div>
-          ) : null}
-          <div class="source-links">
-            {sourceRecords.map((source) =>
-              source ? (
-                <a href={source.url} target="_blank" rel="noreferrer" key={source.id}>
-                  {source.publisher} ↗
-                </a>
-              ) : null
-            )}
-          </div>
-          <p>
-            Scheduled service only; live disruptions are not included. Allow extra time
-            from the station entrance.
-          </p>
-        </div>
-      </details>
-
-      {alternatives.length ? (
-        <details class="technical-drawer alternatives-drawer">
+      <div class="board-drawers">
+        <details class="technical-drawer">
           <summary>
-            <span>{alternatives.length} other route{alternatives.length === 1 ? "" : "s"}</span>
+            <span>How this was calculated</span>
             <span aria-hidden="true">＋</span>
           </summary>
-          <div class="alternative-lines">
-            {alternatives.map((alternative) => (
-              <div key={alternative.signature}>
-                <strong>{formatServiceTime(alternative.boardBy)}</strong>
-                <span>
-                  {alternative.rides
-                    .map((ride) => LINES[PATTERN_BY_ID.get(ride.patternId)!.lineId].shortName)
-                    .join(" → ")}
-                </span>
-                <small>{alternative.transfers.length} changes</small>
+          <div class="technical-content">
+            <ol>
+              {[...result.rides].reverse().map((ride) => {
+                const pattern = PATTERN_BY_ID.get(ride.patternId)!;
+                return (
+                  <li key={`${ride.patternId}-${ride.fromCode}`}>
+                    <strong>{pattern.label}</strong> at {ride.fromCode}: last source time{" "}
+                    {formatServiceTime(ride.publishedLastDeparture)}
+                    {ride.steppedBackByMinutes
+                      ? `, stepped back ${ride.steppedBackByMinutes} min for the connection.`
+                      : ", no headway step-back."}
+                  </li>
+                );
+              })}
+            </ol>
+            {result.warnings.length ? (
+              <ul>
+                {result.warnings.map((warning) => (
+                  <li key={warning}>{warning}</li>
+                ))}
+              </ul>
+            ) : null}
+            {activeNotices.length ? (
+              <div class="drawer-notices">
+                {activeNotices.map((notice) => (
+                  <p key={notice}>{notice}</p>
+                ))}
               </div>
-            ))}
+            ) : null}
+            <div class="source-links">
+              {sourceRecords.map((source) =>
+                source ? (
+                  <a href={source.url} target="_blank" rel="noreferrer" key={source.id}>
+                    {source.publisher} ↗
+                  </a>
+                ) : null
+              )}
+            </div>
+            <p>
+              Scheduled service only; live disruptions are not included. Allow extra time
+              from the station entrance.
+            </p>
           </div>
         </details>
-      ) : null}
+
+        {alternatives.length ? (
+          <details class="technical-drawer alternatives-drawer">
+            <summary>
+              <span>{alternatives.length} other route{alternatives.length === 1 ? "" : "s"}</span>
+              <span aria-hidden="true">＋</span>
+            </summary>
+            <div class="alternative-lines">
+              {alternatives.map((alternative) => (
+                <div key={alternative.signature}>
+                  <strong>{formatServiceTime(alternative.boardBy)}</strong>
+                  <span>
+                    {alternative.rides
+                      .map((ride) => LINES[PATTERN_BY_ID.get(ride.patternId)!.lineId].shortName)
+                      .join(" → ")}
+                  </span>
+                  <small>{alternative.transfers.length} changes</small>
+                </div>
+              ))}
+            </div>
+          </details>
+        ) : null}
+      </div>
     </section>
   );
 }
@@ -368,7 +385,10 @@ export function App() {
           <TrainMark />
           <h1>Last train home</h1>
         </div>
-        <span>Singapore · SGT</span>
+        <span class="header-meta">Singapore · SGT</span>
+        <span class="header-train-runner" aria-hidden="true">
+          <MovingTrain />
+        </span>
       </header>
 
       <main>
@@ -406,7 +426,7 @@ export function App() {
           </div>
 
           <div class="control-strip">
-            <label>
+            <label class="date-field">
               <span>Date</span>
               <input
                 type="date"
@@ -421,7 +441,7 @@ export function App() {
                 }}
               />
             </label>
-            <label>
+            <label class="buffer-field">
               <span>Buffer</span>
               <select
                 name="buffer"

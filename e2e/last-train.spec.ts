@@ -189,13 +189,18 @@ test("14 · the complete primary journey fits the first viewport", async ({ page
       viewportWidth: window.innerWidth,
       viewportHeight: window.innerHeight,
       scrollWidth: document.documentElement.scrollWidth,
+      scrollHeight: document.documentElement.scrollHeight,
       boardBottom: board.bottom,
+      footerTop: footer.top,
       footerBottom: footer.bottom
     };
   });
   expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.viewportWidth);
+  expect(metrics.scrollHeight).toBeLessThanOrEqual(metrics.viewportHeight + 1);
   expect(metrics.boardBottom).toBeLessThanOrEqual(metrics.viewportHeight);
+  expect(metrics.boardBottom).toBeLessThanOrEqual(metrics.footerTop);
   expect(metrics.footerBottom).toBeLessThanOrEqual(metrics.viewportHeight);
+  expect(metrics.footerBottom).toBeGreaterThanOrEqual(metrics.viewportHeight - 2);
 });
 
 test("15 · controls never overlap and interactive controls stay square", async ({ page }) => {
@@ -226,6 +231,7 @@ test("15 · controls never overlap and interactive controls stay square", async 
     const check = box(".calculate-button");
     const board = box(".departure-board");
     const controls = box(".route-controls");
+    const footer = box(".rail-footer");
     const roundedControls = [...document.querySelectorAll("button, input, select")]
       .filter((element) => getComputedStyle(element).borderRadius !== "0px")
       .map((element) => (element as HTMLElement).className);
@@ -236,9 +242,12 @@ test("15 · controls never overlap and interactive controls stay square", async 
       destinationSwapOverlap: overlaps(destination, swap),
       dateBufferOverlap: overlaps(date, buffer),
       bufferCheckOverlap: overlaps(buffer, check),
+      dateCheckOverlap: overlaps(date, check),
       roundedControls,
       controlsTop: controls.top,
-      boardHeight: board.bottom - board.top
+      boardHeight: board.bottom - board.top,
+      boardFooterGap: footer.top - board.bottom,
+      viewportHeight: window.innerHeight
     };
   });
 
@@ -246,10 +255,94 @@ test("15 · controls never overlap and interactive controls stay square", async 
   expect(metrics.destinationSwapOverlap).toBe(false);
   expect(metrics.dateBufferOverlap).toBe(false);
   expect(metrics.bufferCheckOverlap).toBe(false);
+  expect(metrics.dateCheckOverlap).toBe(false);
   expect(metrics.roundedControls).toEqual([]);
 
   if (metrics.width >= 896) {
     expect(metrics.controlsTop).toBeLessThan(120);
-    expect(metrics.boardHeight).toBeLessThan(520);
+    expect(metrics.boardHeight).toBeGreaterThan(metrics.viewportHeight * 0.58);
+    expect(metrics.boardFooterGap).toBeLessThanOrEqual(20);
   }
+});
+
+test("16 · typography is unified and the header train rides the rail", async ({ page }) => {
+  const visual = await page.evaluate(() => {
+    const style = (selector: string) =>
+      getComputedStyle(document.querySelector(selector) as HTMLElement);
+    const runner = style(".header-train-runner");
+    const station = style(".station-picker input");
+    const button = style(".calculate-button");
+    const route = style(".leg-heading strong");
+    const boardTime = style(".board-time time");
+    const families = [
+      style(".wordmark h1").fontFamily,
+      station.fontFamily,
+      button.fontFamily,
+      route.fontFamily,
+      boardTime.fontFamily
+    ];
+
+    return {
+      families,
+      animationName: runner.animationName,
+      animationDuration: runner.animationDuration,
+      stationSize: Number.parseFloat(station.fontSize),
+      buttonSize: Number.parseFloat(button.fontSize),
+      routeSize: Number.parseFloat(route.fontSize)
+    };
+  });
+
+  expect(visual.families.every((family) => family.includes("Nunito Sans Variable"))).toBe(true);
+  expect(new Set(visual.families).size).toBe(1);
+  expect(visual.animationName).toBe("header-train-ride");
+  expect(visual.animationDuration).toBe("11s");
+  expect(visual.stationSize).toBeGreaterThanOrEqual(13);
+  expect(visual.buttonSize).toBeGreaterThanOrEqual(11);
+  expect(visual.routeSize).toBeGreaterThanOrEqual(10);
+
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect
+    .poll(() =>
+      page.locator(".header-train-runner").evaluate((element) =>
+        getComputedStyle(element).animationName
+      )
+    )
+    .toBe("none");
+});
+
+test("17 · optional details open without colliding with the journey", async ({ page }) => {
+  const journey = page.locator(".compact-route");
+  const foot = page.locator(".board-foot");
+  const board = page.locator(".departure-board");
+  const technical = page.locator(".technical-drawer").first();
+  const alternatives = page.locator(".alternatives-drawer");
+
+  await technical.locator("summary").click();
+  await expect(technical.locator(".technical-content")).toBeVisible();
+
+  const technicalMetrics = await page.evaluate(() => {
+    const route = document.querySelector(".compact-route")!.getBoundingClientRect();
+    const foot = document.querySelector(".board-foot")!.getBoundingClientRect();
+    const content = document.querySelector(".technical-content")!.getBoundingClientRect();
+    const boardRect = document.querySelector(".departure-board")!.getBoundingClientRect();
+    return {
+      routeBottom: route.bottom,
+      footTop: foot.top,
+      contentBottom: content.bottom,
+      boardBottom: boardRect.bottom,
+      scrollWidth: document.documentElement.scrollWidth,
+      viewportWidth: window.innerWidth
+    };
+  });
+
+  expect(technicalMetrics.routeBottom).toBeLessThanOrEqual(technicalMetrics.footTop + 1);
+  expect(technicalMetrics.contentBottom).toBeLessThanOrEqual(technicalMetrics.boardBottom + 1);
+  expect(technicalMetrics.scrollWidth).toBeLessThanOrEqual(technicalMetrics.viewportWidth);
+
+  await technical.locator("summary").click();
+  await alternatives.locator("summary").click();
+  await expect(alternatives.locator(".alternative-lines")).toBeVisible();
+  await expect(journey).toBeVisible();
+  await expect(foot).toBeVisible();
+  await expect(board).toBeVisible();
 });
