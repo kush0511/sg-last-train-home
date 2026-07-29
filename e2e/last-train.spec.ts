@@ -197,3 +197,59 @@ test("14 · the complete primary journey fits the first viewport", async ({ page
   expect(metrics.boardBottom).toBeLessThanOrEqual(metrics.viewportHeight);
   expect(metrics.footerBottom).toBeLessThanOrEqual(metrics.viewportHeight);
 });
+
+test("15 · controls never overlap and interactive controls stay square", async ({ page }) => {
+  const metrics = await page.evaluate(() => {
+    const box = (selector: string) => {
+      const rect = document.querySelector(selector)!.getBoundingClientRect();
+      return {
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        left: rect.left
+      };
+    };
+    const overlaps = (
+      first: ReturnType<typeof box>,
+      second: ReturnType<typeof box>
+    ) =>
+      first.left < second.right &&
+      first.right > second.left &&
+      first.top < second.bottom &&
+      first.bottom > second.top;
+
+    const origin = box("#origin");
+    const destination = box("#destination");
+    const swap = box(".swap-button");
+    const date = box('input[type="date"]');
+    const buffer = box('select[name="buffer"]');
+    const check = box(".calculate-button");
+    const board = box(".departure-board");
+    const controls = box(".route-controls");
+    const roundedControls = [...document.querySelectorAll("button, input, select")]
+      .filter((element) => getComputedStyle(element).borderRadius !== "0px")
+      .map((element) => (element as HTMLElement).className);
+
+    return {
+      width: window.innerWidth,
+      originSwapOverlap: overlaps(origin, swap),
+      destinationSwapOverlap: overlaps(destination, swap),
+      dateBufferOverlap: overlaps(date, buffer),
+      bufferCheckOverlap: overlaps(buffer, check),
+      roundedControls,
+      controlsTop: controls.top,
+      boardHeight: board.bottom - board.top
+    };
+  });
+
+  expect(metrics.originSwapOverlap).toBe(false);
+  expect(metrics.destinationSwapOverlap).toBe(false);
+  expect(metrics.dateBufferOverlap).toBe(false);
+  expect(metrics.bufferCheckOverlap).toBe(false);
+  expect(metrics.roundedControls).toEqual([]);
+
+  if (metrics.width >= 896) {
+    expect(metrics.controlsTop).toBeLessThan(120);
+    expect(metrics.boardHeight).toBeLessThan(520);
+  }
+});

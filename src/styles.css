@@ -49,6 +49,7 @@ body {
 button,
 input,
 select {
+  border-radius: 0;
   font: inherit;
 }
 
@@ -84,16 +85,16 @@ a {
 }
 
 .app-shell {
-  width: min(100%, 74rem);
+  width: min(100%, 86rem);
   min-height: 100svh;
   margin: 0 auto;
-  padding: 0 0.85rem;
+  padding: 0 0.75rem;
   display: flex;
   flex-direction: column;
 }
 
 .rail-header {
-  height: 3.1rem;
+  height: 3rem;
   flex: none;
   display: flex;
   align-items: center;
@@ -120,7 +121,7 @@ a {
 .wordmark {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
 }
 
 .wordmark h1 {
@@ -133,8 +134,8 @@ a {
 }
 
 .train-mark {
-  width: 1.65rem;
-  height: 1.65rem;
+  width: 1.55rem;
+  height: 1.55rem;
   overflow: visible;
   fill: none;
   stroke: var(--green);
@@ -145,16 +146,16 @@ a {
 
 .rail-header > span {
   color: var(--muted);
-  font-size: 0.58rem;
-  font-weight: 650;
+  font-size: 0.57rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
 
 main {
   min-height: 0;
-  padding: 0.65rem 0 0.5rem;
+  padding: 0.55rem 0 0.35rem;
   display: flex;
-  flex: 1;
+  flex: none;
   flex-direction: column;
 }
 
@@ -166,15 +167,17 @@ main {
 .station-fields {
   position: relative;
   display: grid;
-  gap: 0.2rem;
-  padding-left: 1.65rem;
+  grid-template-columns: minmax(0, 1fr) 2.55rem;
+  column-gap: 0.45rem;
+  row-gap: 0.18rem;
+  padding-left: 1.45rem;
 }
 
 .input-rail {
   position: absolute;
-  top: 1.48rem;
-  bottom: 0.95rem;
-  left: 0.4rem;
+  top: 1.35rem;
+  bottom: 0.82rem;
+  left: 0.3rem;
   width: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -183,8 +186,8 @@ main {
 
 .input-rail i {
   z-index: 1;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.58rem;
+  height: 0.58rem;
   flex: none;
   border: 2px solid var(--green);
   border-radius: 50%;
@@ -208,6 +211,7 @@ main {
 .station-picker {
   position: relative;
   min-width: 0;
+  grid-column: 1;
 }
 
 .station-picker:focus-within {
@@ -217,9 +221,9 @@ main {
 .station-picker__label,
 .control-strip label > span {
   display: block;
-  margin: 0 0 0.08rem;
+  margin: 0 0 0.06rem;
   color: var(--green-dark);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
@@ -231,15 +235,16 @@ main {
 
 .station-picker input {
   width: 100%;
-  height: 2.62rem;
-  padding: 0 4.35rem 0 0;
+  height: 2.52rem;
+  min-width: 0;
+  padding: 0 4rem 0 0;
   border: 0;
   border-bottom: 1px solid var(--rule-strong);
   border-radius: 0;
   outline: 0;
   color: var(--ink);
   background: transparent;
-  font-size: 1rem;
+  font-size: 0.96rem;
   font-weight: 720;
   letter-spacing: -0.02em;
 }
@@ -256,17 +261,17 @@ main {
 .station-picker__selected-lines {
   position: absolute;
   top: 50%;
-  right: 2.15rem;
+  right: 1.95rem;
   display: flex;
-  gap: 0.18rem;
+  gap: 0.16rem;
   transform: translateY(-50%);
   pointer-events: none;
 }
 
 .station-picker__selected-lines i {
-  width: 0.32rem;
-  height: 1.05rem;
-  border-radius: 2px;
+  width: 0.3rem;
+  height: 1rem;
+  border-radius: 0;
   background: var(--station-line);
 }
 
@@ -274,14 +279,15 @@ main {
   position: absolute;
   z-index: 2;
   top: 50%;
-  right: -0.25rem;
-  width: 2.25rem;
-  height: 2.25rem;
+  right: -0.2rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   border: 0;
+  border-radius: 0;
   color: var(--dim);
   background: transparent;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1;
   transform: translateY(-50%);
   cursor: pointer;
@@ -289,19 +295,20 @@ main {
 
 .station-picker__clear:hover {
   color: var(--green-dark);
+  background: var(--surface-green);
 }
 
 .station-picker__menu {
   position: absolute;
   z-index: 40;
   top: calc(100% + 0.28rem);
-  right: 0;
-  left: -1.65rem;
+  right: -3rem;
+  left: -1.45rem;
   max-height: min(22rem, 58svh);
   overflow: auto;
   padding: 0;
   border: 1px solid var(--rule-strong);
-  border-radius: 0.35rem;
+  border-radius: 0;
   background: var(--surface);
   box-shadow:
     0 1.1rem 2.8rem rgba(71, 60, 42, 0.2),
@@ -312,8 +319,8 @@ main {
   position: sticky;
   z-index: 2;
   top: 0;
-  min-height: 1.8rem;
-  padding: 0 0.65rem;
+  min-height: 1.75rem;
+  padding: 0 0.62rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -321,21 +328,21 @@ main {
   border-bottom: 1px solid var(--rule);
   color: var(--green-dark);
   background: var(--surface-soft);
-  font-size: 0.54rem;
+  font-size: 0.53rem;
   font-weight: 800;
 }
 
 .station-picker__menu-head > span:last-child {
   color: var(--muted);
-  font-size: 0.46rem;
+  font-size: 0.45rem;
   font-weight: 650;
   white-space: nowrap;
 }
 
 .station-picker__menu button {
   width: 100%;
-  min-height: 3.85rem;
-  padding: 0.48rem 0.62rem;
+  min-height: 3.55rem;
+  padding: 0.42rem 0.6rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: auto auto;
@@ -371,7 +378,7 @@ main {
 .station-picker__name {
   display: block;
   overflow: hidden;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 760;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -388,10 +395,10 @@ main {
 
 .station-picker__meta {
   display: block;
-  margin-top: 0.14rem;
+  margin-top: 0.12rem;
   overflow: hidden;
   color: var(--muted);
-  font-size: 0.49rem;
+  font-size: 0.48rem;
   font-weight: 650;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -399,64 +406,67 @@ main {
 
 .station-picker__reason {
   justify-self: end;
-  padding: 0.12rem 0.35rem;
-  border-radius: 999px;
+  padding: 0.12rem 0.32rem;
+  border-radius: 0;
   color: #76501d;
   background: var(--amber-soft);
-  font-size: 0.45rem;
+  font-size: 0.44rem;
   font-weight: 800;
 }
 
 .station-picker__codes {
   justify-self: end;
   display: flex;
-  gap: 0.2rem;
+  gap: 0.18rem;
 }
 
 .station-picker__codes > span {
-  padding: 0.17rem 0.28rem;
-  border-radius: 0.14rem;
+  padding: 0.16rem 0.26rem;
+  border-radius: 0;
   color: var(--station-line-text);
   background: var(--station-line);
-  font-size: 0.51rem;
+  font-size: 0.49rem;
   font-weight: 850;
   font-variant-numeric: tabular-nums;
 }
 
 .station-picker__empty {
-  min-height: 5.2rem;
-  padding: 0.9rem;
+  min-height: 5rem;
+  padding: 0.85rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.25rem;
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
 }
 
 .station-picker__empty strong {
   color: var(--red);
-  font-size: 0.6rem;
+  font-size: 0.59rem;
 }
 
 .station-picker__empty span {
-  font-size: 0.63rem;
-  line-height: 1.45;
+  font-size: 0.61rem;
+  line-height: 1.42;
 }
 
 .swap-button {
-  position: absolute;
+  position: static;
   z-index: 25;
-  top: 3.42rem;
-  right: 0;
-  width: 2.72rem;
-  height: 2.72rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: end;
   border: 1px solid var(--rule-strong);
-  border-radius: 50%;
+  border-radius: 0;
   color: var(--green-dark);
   background: var(--surface);
-  box-shadow: 0 0.2rem 0.55rem rgba(83, 71, 51, 0.12);
-  font-size: 1rem;
+  box-shadow: 0.16rem 0.16rem 0 rgba(170, 158, 137, 0.36);
+  font-size: 0.92rem;
   cursor: pointer;
 }
 
@@ -464,46 +474,76 @@ main {
   background: var(--surface-green);
 }
 
-.control-strip {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(4.4rem, 0.68fr) 4.8rem;
-  gap: 0.45rem;
-  align-items: end;
-  margin-top: 0.58rem;
+.swap-button:active {
+  box-shadow: none;
+  transform: translate(0.1rem, 0.1rem);
 }
 
-.control-strip label {
+.swap-icon {
+  line-height: 1;
+}
+
+.swap-icon--horizontal {
+  display: none;
+}
+
+.control-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 5rem 4rem;
+  gap: 0.38rem;
+  align-items: end;
+  margin-top: 0.48rem;
+}
+
+.control-strip label,
+.control-strip input,
+.control-strip select,
+.calculate-button {
   min-width: 0;
 }
 
 .control-strip input,
 .control-strip select {
   width: 100%;
-  height: 2.38rem;
-  padding: 0 0.42rem;
+  height: 2.32rem;
+  padding: 0 0.38rem;
   border: 1px solid var(--rule-strong);
-  border-radius: 0.28rem;
+  border-radius: 0;
   color: var(--ink);
-  background: rgba(255, 250, 240, 0.74);
-  font-size: 0.68rem;
+  background-color: rgba(255, 250, 240, 0.74);
+  font-size: 0.65rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   text-transform: uppercase;
 }
 
+.control-strip select {
+  appearance: none;
+  padding-right: 1.15rem;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%),
+    linear-gradient(135deg, var(--ink-soft) 50%, transparent 50%);
+  background-position:
+    calc(100% - 0.68rem) 50%,
+    calc(100% - 0.45rem) 50%;
+  background-size: 0.25rem 0.25rem, 0.25rem 0.25rem;
+  background-repeat: no-repeat;
+}
+
 .calculate-button {
-  height: 2.38rem;
-  padding: 0 0.62rem;
+  height: 2.32rem;
+  padding: 0 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border: 0;
-  border-radius: 0.28rem;
+  justify-content: center;
+  gap: 0.28rem;
+  border: 1px solid var(--green-dark);
+  border-radius: 0;
   color: #fffdf7;
   background: var(--green);
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 850;
-  box-shadow: 0 0.18rem 0.45rem rgba(31, 92, 73, 0.18);
+  box-shadow: 0.16rem 0.16rem 0 rgba(31, 92, 73, 0.22);
   cursor: pointer;
 }
 
@@ -511,25 +551,29 @@ main {
   background: var(--green-dark);
 }
 
+.calculate-button:active {
+  box-shadow: none;
+  transform: translate(0.1rem, 0.1rem);
+}
+
 .departure-board {
   position: relative;
   min-height: 0;
-  margin-top: 0.72rem;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+  margin-top: 0.55rem;
+  display: block;
+  flex: none;
   overflow: hidden;
   border-top: 3px solid var(--green);
   border-right: 1px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule-strong);
   border-left: 1px solid var(--rule-strong);
-  background: rgba(255, 250, 240, 0.92);
+  background: rgba(255, 250, 240, 0.94);
   box-shadow: 0 0.3rem 0.9rem rgba(91, 75, 50, 0.08);
 }
 
 .board-status {
-  min-height: 1.85rem;
-  padding: 0 0.65rem;
+  min-height: 1.78rem;
+  padding: 0 0.62rem;
   display: flex;
   flex: none;
   align-items: center;
@@ -537,20 +581,20 @@ main {
   border-bottom: 1px solid var(--rule);
   color: var(--muted);
   background: var(--surface-soft);
-  font-size: 0.55rem;
+  font-size: 0.53rem;
   font-weight: 700;
 }
 
 .board-status > span:first-child {
   display: inline-flex;
   align-items: center;
-  gap: 0.38rem;
+  gap: 0.36rem;
   font-weight: 820;
 }
 
 .board-status i {
-  width: 0.46rem;
-  height: 0.46rem;
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: 50%;
   background: var(--amber);
   box-shadow: 0 0 0 3px rgba(216, 154, 59, 0.16);
@@ -569,15 +613,21 @@ main {
   color: #8b6125;
 }
 
+.board-core {
+  min-width: 0;
+  min-height: 0;
+  display: block;
+  flex: none;
+}
+
 .board-time {
-  min-height: 5.9rem;
-  max-height: 9.2rem;
-  padding: 0.72rem 0.7rem 0.62rem;
+  min-height: 5.1rem;
+  padding: 0.6rem 0.68rem 0.55rem;
   display: flex;
-  flex: 1 1 7.25rem;
+  flex: none;
   align-items: center;
   justify-content: space-between;
-  gap: 0.8rem;
+  gap: 0.7rem;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -592,70 +642,77 @@ main {
 
 .board-time p {
   color: var(--muted);
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 800;
 }
 
 .board-time time {
-  margin-top: 0.12rem;
+  margin-top: 0.08rem;
   color: var(--green-dark);
   font-family:
     ui-rounded, "SF Pro Rounded", "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(2.8rem, 13.2vw, 4.65rem);
+  font-size: clamp(2.55rem, 12.5vw, 3.35rem);
   font-weight: 850;
   font-variant-numeric: tabular-nums;
-  line-height: 0.95;
-  letter-spacing: -0.07em;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
   white-space: nowrap;
 }
 
 .arrival-time {
+  flex: none;
   text-align: right;
 }
 
 .arrival-time span {
   color: var(--muted);
-  font-size: 0.52rem;
+  font-size: 0.5rem;
   font-weight: 750;
 }
 
 .arrival-time strong {
-  margin-top: 0.18rem;
+  margin-top: 0.15rem;
   color: var(--ink);
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-variant-numeric: tabular-nums;
 }
 
 .arrival-time small {
-  margin-top: 0.1rem;
+  margin-top: 0.08rem;
   color: var(--muted);
-  font-size: 0.55rem;
+  font-size: 0.52rem;
+}
+
+.board-journey {
+  min-width: 0;
+  min-height: 0;
+  display: block;
+  flex: none;
 }
 
 .alert-line {
-  padding: 0.42rem 0.65rem;
+  padding: 0.38rem 0.62rem;
   border-bottom: 1px solid #dfaea8;
   color: #87423a;
   background: #f9e4e0;
-  font-size: 0.6rem;
+  font-size: 0.57rem;
   font-weight: 800;
 }
 
 .service-notice {
-  flex: none;
   border-bottom: 1px solid #dec28d;
   color: #75511e;
   background: #fbefd8;
 }
 
 .service-notice summary {
-  min-height: 1.85rem;
-  padding: 0.3rem 0.62rem;
+  min-height: 1.75rem;
+  padding: 0.28rem 0.6rem;
   display: grid;
-  grid-template-columns: 0.9rem minmax(0, 1fr) auto;
-  gap: 0.38rem;
+  grid-template-columns: 0.85rem minmax(0, 1fr) auto;
+  gap: 0.36rem;
   align-items: center;
-  font-size: 0.54rem;
+  font-size: 0.52rem;
   font-weight: 760;
   line-height: 1.3;
   cursor: pointer;
@@ -667,14 +724,14 @@ main {
 }
 
 .service-notice summary > span:first-child {
-  width: 0.78rem;
-  height: 0.78rem;
+  width: 0.75rem;
+  height: 0.75rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
   color: #fffaf0;
   background: var(--amber);
-  font-size: 0.5rem;
+  font-size: 0.48rem;
   font-weight: 900;
 }
 
@@ -684,28 +741,29 @@ main {
 
 .service-notice p {
   margin: 0;
-  padding: 0 1.9rem 0.55rem;
+  padding: 0 1.85rem 0.5rem;
   color: #80663b;
-  font-size: 0.59rem;
-  line-height: 1.48;
+  font-size: 0.57rem;
+  line-height: 1.45;
 }
 
 .compact-route {
-  --route-spine-x: 1.15rem;
+  --route-spine-x: 1.1rem;
   position: relative;
-  min-height: 6.6rem;
-  padding: 0.5rem 0.65rem 0.28rem;
+  min-height: 0;
+  padding: 0.44rem 0.62rem 0.3rem;
   display: flex;
-  flex: 1.25 1 8.5rem;
   flex-direction: column;
-  justify-content: space-evenly;
+  flex: none;
+  justify-content: flex-start;
+  gap: 0.28rem;
 }
 
 .compact-route.has-transfers::before {
   content: "";
   position: absolute;
-  top: 0.9rem;
-  bottom: 0.9rem;
+  top: 0.82rem;
+  bottom: 0.75rem;
   left: var(--route-spine-x);
   width: 2px;
   background: var(--rule);
@@ -715,12 +773,12 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1rem minmax(0, 1fr);
-  column-gap: 0.55rem;
+  grid-template-columns: 0.95rem minmax(0, 1fr);
+  column-gap: 0.52rem;
 }
 
 .leg-rail {
-  min-height: 3.05rem;
+  min-height: 2.85rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -728,8 +786,8 @@ main {
 
 .leg-rail i {
   z-index: 1;
-  width: 0.58rem;
-  height: 0.58rem;
+  width: 0.56rem;
+  height: 0.56rem;
   flex: none;
   border: 2px solid var(--line);
   border-radius: 50%;
@@ -748,23 +806,23 @@ main {
 
 .leg-content {
   min-width: 0;
-  padding: 0 0 0.48rem;
+  padding: 0 0 0.38rem;
 }
 
 .leg-heading {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 0.45rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
 .line-badge {
-  min-width: 2.75rem;
-  padding: 0.19rem 0.3rem;
-  border-radius: 0.15rem;
+  min-width: 2.58rem;
+  padding: 0.17rem 0.28rem;
+  border-radius: 0;
   color: var(--line-text);
   background: var(--line);
-  font-size: 0.52rem;
+  font-size: 0.49rem;
   font-weight: 900;
   text-align: center;
 }
@@ -773,7 +831,7 @@ main {
   min-width: 0;
   overflow: hidden;
   color: var(--ink);
-  font-size: 0.7rem;
+  font-size: 0.67rem;
   font-weight: 760;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -786,37 +844,42 @@ main {
 
 .leg-heading time {
   color: var(--ink);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 820;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .leg-content p {
-  margin: 0.18rem 0 0;
+  margin: 0.15rem 0 0;
   overflow: hidden;
   color: var(--muted);
-  font-size: 0.57rem;
+  font-size: 0.54rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .transfer-line {
   grid-column: 2;
-  margin: 0 0 0.42rem;
-  padding: 0.32rem 0.42rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.45rem;
+  margin: 0 0 0.28rem;
+  padding: 0.28rem 0.4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.4rem;
   border-left: 3px solid var(--amber);
   color: #755b31;
   background: #f7ead2;
-  font-size: 0.52rem;
+  font-size: 0.49rem;
   font-weight: 680;
 }
 
+.transfer-line span:last-child {
+  white-space: nowrap;
+}
+
 .board-foot {
-  min-height: 1.72rem;
-  padding: 0 0.65rem;
+  min-height: 1.62rem;
+  padding: 0 0.62rem;
   display: flex;
   flex: none;
   align-items: center;
@@ -824,7 +887,7 @@ main {
   border-top: 1px solid var(--rule);
   color: var(--muted);
   background: rgba(247, 239, 223, 0.56);
-  font-size: 0.49rem;
+  font-size: 0.47rem;
   font-weight: 700;
 }
 
@@ -834,13 +897,13 @@ main {
 }
 
 .technical-drawer summary {
-  min-height: 2.2rem;
-  padding: 0 0.65rem;
+  min-height: 2.05rem;
+  padding: 0 0.62rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--ink-soft);
-  font-size: 0.59rem;
+  font-size: 0.57rem;
   font-weight: 780;
   cursor: pointer;
   list-style: none;
@@ -857,10 +920,10 @@ main {
 .technical-content {
   max-height: 14rem;
   overflow: auto;
-  padding: 0.15rem 0.7rem 0.8rem;
+  padding: 0.12rem 0.68rem 0.75rem;
   color: var(--ink-soft);
-  font-size: 0.63rem;
-  line-height: 1.5;
+  font-size: 0.61rem;
+  line-height: 1.48;
 }
 
 .technical-content ol,
@@ -870,20 +933,20 @@ main {
 }
 
 .technical-content ul {
-  margin-top: 0.55rem;
+  margin-top: 0.5rem;
 }
 
 .technical-content li + li {
-  margin-top: 0.25rem;
+  margin-top: 0.22rem;
 }
 
 .technical-content > p {
-  margin: 0.55rem 0 0;
+  margin: 0.5rem 0 0;
   color: var(--muted);
 }
 
 .drawer-notices {
-  margin-top: 0.55rem;
+  margin-top: 0.5rem;
   padding-left: 0.5rem;
   border-left: 3px solid var(--amber);
 }
@@ -900,22 +963,22 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: 0.65rem;
+  margin-top: 0.6rem;
 }
 
 .source-links a {
   color: var(--green-dark);
-  font-size: 0.58rem;
+  font-size: 0.57rem;
   font-weight: 750;
   text-underline-offset: 0.18rem;
 }
 
 .alternative-lines > div {
-  min-height: 2.2rem;
-  padding: 0 0.65rem;
+  min-height: 2.05rem;
+  padding: 0 0.62rem;
   display: grid;
-  grid-template-columns: 4.7rem 1fr auto;
-  gap: 0.55rem;
+  grid-template-columns: 4.5rem 1fr auto;
+  gap: 0.5rem;
   align-items: center;
   border-top: 1px solid #e4dac8;
 }
@@ -923,7 +986,7 @@ main {
 .alternative-lines strong,
 .alternative-lines span,
 .alternative-lines small {
-  font-size: 0.58rem;
+  font-size: 0.56rem;
 }
 
 .alternative-lines small {
@@ -931,32 +994,32 @@ main {
 }
 
 .error-line {
-  min-height: 3.2rem;
-  margin-top: 0.72rem;
-  padding: 0.65rem;
+  min-height: 3rem;
+  margin-top: 0.55rem;
+  padding: 0.62rem;
   display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  gap: 0.55rem;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 0.5rem;
   border-top: 3px solid var(--red);
   border-bottom: 1px solid #d8aaa4;
   color: #744c47;
   background: #f8e5e1;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
 }
 
 .error-line strong {
   color: var(--red);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
 }
 
 .rail-footer {
-  min-height: 2.45rem;
+  min-height: 2.2rem;
   flex: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--muted);
-  font-size: 0.52rem;
+  font-size: 0.5rem;
   font-weight: 650;
 }
 
@@ -967,343 +1030,454 @@ main {
 }
 
 @media (max-width: 22.5rem) {
-  .leg-heading {
+  .app-shell {
+    padding-right: 0.62rem;
+    padding-left: 0.62rem;
+  }
+
+  .wordmark h1 {
+    font-size: 0.86rem;
+  }
+
+  .rail-header > span {
+    font-size: 0.51rem;
+  }
+
+  .control-strip {
+    grid-template-columns: minmax(0, 1fr) 4.65rem 3.75rem;
     gap: 0.3rem;
   }
 
+  .control-strip input,
+  .control-strip select {
+    font-size: 0.6rem;
+  }
+
+  .calculate-button {
+    padding: 0 0.3rem;
+    font-size: 0.61rem;
+  }
+
+  .leg-heading {
+    gap: 0.28rem;
+  }
+
   .line-badge {
-    min-width: 2.35rem;
-    padding-right: 0.22rem;
-    padding-left: 0.22rem;
-    font-size: 0.48rem;
+    min-width: 2.2rem;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    font-size: 0.45rem;
   }
 
   .leg-heading strong {
-    font-size: 0.64rem;
+    font-size: 0.61rem;
   }
 
   .leg-heading time {
-    font-size: 0.59rem;
+    font-size: 0.56rem;
   }
 
   .leg-content p {
-    font-size: 0.54rem;
+    font-size: 0.5rem;
+  }
+
+  .transfer-line {
+    font-size: 0.45rem;
   }
 }
 
-@media (max-width: 51.99rem) and (max-height: 43.75rem) {
+@media (max-width: 55.99rem) and (max-height: 43.75rem) {
+  .app-shell {
+    padding-right: 0.62rem;
+    padding-left: 0.62rem;
+  }
+
   .rail-header {
-    height: 2.75rem;
+    height: 2.45rem;
+  }
+
+  .train-mark {
+    width: 1.35rem;
+    height: 1.35rem;
   }
 
   main {
-    padding-top: 0.45rem;
-    padding-bottom: 0.35rem;
+    padding-top: 0.28rem;
+    padding-bottom: 0.18rem;
+  }
+
+  .station-fields {
+    padding-left: 1.25rem;
+    row-gap: 0.08rem;
+  }
+
+  .input-rail {
+    top: 1.12rem;
+    bottom: 0.65rem;
+    left: 0.25rem;
+  }
+
+  .station-picker__label,
+  .control-strip label > span {
+    font-size: 0.5rem;
   }
 
   .station-picker input {
-    height: 2.35rem;
+    height: 2.02rem;
+    font-size: 0.82rem;
+  }
+
+  .station-picker__menu {
+    left: -1.25rem;
   }
 
   .swap-button {
-    top: 3.13rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .control-strip {
-    margin-top: 0.4rem;
+    margin-top: 0.26rem;
   }
 
   .control-strip input,
   .control-strip select,
   .calculate-button {
-    height: 2.2rem;
+    height: 2rem;
   }
 
   .departure-board {
-    margin-top: 0.5rem;
-  }
-
-  .board-time {
-    min-height: 4.75rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.45rem;
-  }
-
-  .board-time time {
-    font-size: clamp(2.7rem, 14vw, 3.4rem);
-  }
-
-  .compact-route {
-    min-height: 5.8rem;
-    padding-top: 0.35rem;
-    padding-bottom: 0.2rem;
-  }
-
-  .technical-drawer summary {
-    min-height: 1.9rem;
-  }
-
-  .rail-footer {
-    min-height: 2rem;
-  }
-}
-
-@media (max-width: 51.99rem) and (max-height: 38.75rem) {
-  .rail-header {
-    height: 2.5rem;
-  }
-
-  main {
-    padding-top: 0.3rem;
-    padding-bottom: 0.2rem;
-  }
-
-  .station-picker input {
-    height: 2.15rem;
-  }
-
-  .swap-button {
-    top: 2.88rem;
-    width: 2.35rem;
-    height: 2.35rem;
-  }
-
-  .control-strip {
-    margin-top: 0.3rem;
-  }
-
-  .control-strip input,
-  .control-strip select,
-  .calculate-button {
-    height: 2.05rem;
-  }
-
-  .departure-board {
-    margin-top: 0.35rem;
+    margin-top: 0.32rem;
   }
 
   .board-status {
-    min-height: 1.65rem;
+    min-height: 1.45rem;
+    font-size: 0.47rem;
   }
 
   .board-time {
-    min-height: 4.3rem;
-    max-height: 4.3rem;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
-    flex: 0 0 4.3rem;
+    min-height: 3.85rem;
+    padding-top: 0.34rem;
+    padding-bottom: 0.32rem;
+  }
+
+  .board-time p {
+    font-size: 0.51rem;
   }
 
   .board-time time {
-    font-size: clamp(2.35rem, 12.5vw, 2.75rem);
+    font-size: clamp(2.25rem, 11.5vw, 2.8rem);
   }
 
   .compact-route {
-    min-height: 5.8rem;
+    padding-top: 0.28rem;
+    padding-bottom: 0.18rem;
+    gap: 0.08rem;
+  }
+
+  .leg-rail {
+    min-height: 2.4rem;
+  }
+
+  .leg-content {
+    padding-bottom: 0.25rem;
+  }
+
+  .transfer-line {
+    margin-bottom: 0.16rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
   }
 
   .board-foot {
-    min-height: 1.5rem;
+    min-height: 1.35rem;
   }
 
   .technical-drawer summary {
-    min-height: 1.65rem;
+    min-height: 1.55rem;
   }
 
   .rail-footer {
-    min-height: 1.75rem;
+    min-height: 1.55rem;
   }
 }
 
-@media (min-width: 52rem) {
+@media (min-width: 56rem) {
   .app-shell {
-    padding: 0 1.6rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   .rail-header {
-    height: 4rem;
+    height: 3.75rem;
   }
 
   .wordmark h1 {
     font-size: 1.05rem;
   }
 
+  .train-mark {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
   .rail-header > span {
-    font-size: 0.65rem;
+    font-size: 0.63rem;
   }
 
   main {
-    min-height: calc(100svh - 6.75rem);
     padding: 1rem 0;
-    display: grid;
-    grid-template-columns: minmax(18rem, 21.5rem) minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr);
-    gap: 2rem;
-    align-items: stretch;
+    justify-content: flex-start;
   }
 
   .route-controls {
-    min-width: 0;
-    padding: 0.35rem 2rem 0.35rem 0;
-    border-right: 1px solid var(--rule-strong);
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(28rem, 0.95fr);
+    gap: 1.4rem;
+    align-items: end;
   }
 
   .station-fields {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-    padding-left: 1.65rem;
+    grid-template-columns: minmax(0, 1fr) 2.8rem minmax(0, 1fr);
+    column-gap: 0.7rem;
+    row-gap: 0;
+    padding-left: 0;
   }
 
   .input-rail {
-    display: flex;
+    display: none;
+  }
+
+  .station-picker {
+    grid-column: auto;
   }
 
   .station-picker__label,
   .control-strip label > span {
-    font-size: 0.66rem;
-  }
-
-  .station-picker input {
-    height: 3rem;
-    font-size: 1.08rem;
-  }
-
-  .swap-button {
-    top: 3.9rem;
-    right: 0;
-    transform: none;
-  }
-
-  .control-strip {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-    gap: 0.65rem;
-    margin-top: 1rem;
-  }
-
-  .control-strip input,
-  .control-strip select {
-    height: 2.75rem;
-    font-size: 0.75rem;
-  }
-
-  .calculate-button {
-    grid-column: 1 / -1;
-    height: 2.85rem;
-    margin-top: 0.1rem;
-    font-size: 0.76rem;
-  }
-
-  .departure-board {
-    height: 100%;
-    min-height: 34rem;
-    margin-top: 0;
-  }
-
-  .board-status {
-    min-height: 2.25rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
     font-size: 0.63rem;
   }
 
+  .station-picker input {
+    height: 2.8rem;
+    font-size: 1rem;
+  }
+
+  .station-picker__menu {
+    right: 0;
+    left: 0;
+    min-width: 22rem;
+  }
+
+  .station-picker:last-child .station-picker__menu {
+    right: 0;
+    left: auto;
+  }
+
+  .swap-button {
+    width: 2.8rem;
+    height: 2.8rem;
+    grid-column: auto;
+    grid-row: auto;
+    align-self: end;
+    justify-self: stretch;
+    font-size: 1rem;
+  }
+
+  .swap-icon--vertical {
+    display: none;
+  }
+
+  .swap-icon--horizontal {
+    display: inline;
+  }
+
+  .control-strip {
+    grid-template-columns: minmax(10rem, 1fr) 7rem 7rem;
+    gap: 0.55rem;
+    margin-top: 0;
+  }
+
+  .control-strip input,
+  .control-strip select,
+  .calculate-button {
+    height: 2.8rem;
+    font-size: 0.7rem;
+  }
+
+  .departure-board {
+    margin-top: 0.9rem;
+    display: block;
+    flex: none;
+  }
+
+  .board-status {
+    min-height: 2rem;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+    font-size: 0.59rem;
+  }
+
+  .board-core {
+    display: grid;
+    grid-template-columns: minmax(19rem, 0.82fr) minmax(0, 1.18fr);
+  }
+
   .board-time {
-    min-height: 8.5rem;
-    max-height: 12rem;
-    padding: 1.1rem 1.15rem;
+    min-height: 15rem;
+    padding: 1.35rem 1.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
   }
 
   .board-time p {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
 
   .board-time time {
-    font-size: clamp(4.6rem, 7vw, 6.2rem);
+    margin-top: 0.22rem;
+    font-size: clamp(4rem, 5.5vw, 5.5rem);
+  }
+
+  .arrival-time {
+    width: 100%;
+    margin-top: 1.2rem;
+    padding-top: 0.75rem;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 0.65rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule);
+    text-align: left;
   }
 
   .arrival-time span {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
   }
 
   .arrival-time strong {
-    font-size: 1.05rem;
+    margin-top: 0;
+    font-size: 0.95rem;
+  }
+
+  .arrival-time small {
+    margin-top: 0;
+    font-size: 0.58rem;
+    text-align: right;
+  }
+
+  .board-journey {
+    min-height: 15rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--rule);
   }
 
   .compact-route {
-    --route-spine-x: 1.575rem;
-    min-height: 11rem;
-    padding: 0.8rem 1rem 0.45rem;
+    --route-spine-x: 1.47rem;
+    min-height: 0;
+    padding: 1rem 0.9rem 0.65rem;
+    flex: 1;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .compact-route.has-transfers::before {
+    top: 1.35rem;
+    bottom: 1.1rem;
   }
 
   .compact-leg {
-    grid-template-columns: 1.15rem minmax(0, 1fr);
-    column-gap: 0.72rem;
+    grid-template-columns: 1.1rem minmax(0, 1fr);
+    column-gap: 0.68rem;
   }
 
   .leg-rail {
-    min-height: 3.8rem;
+    min-height: 3.25rem;
   }
 
   .leg-heading {
-    gap: 0.65rem;
+    gap: 0.58rem;
   }
 
   .line-badge {
-    min-width: 3.25rem;
-    padding: 0.24rem 0.38rem;
-    font-size: 0.62rem;
+    min-width: 3rem;
+    padding: 0.22rem 0.34rem;
+    font-size: 0.57rem;
   }
 
   .leg-heading strong {
-    font-size: 0.86rem;
+    font-size: 0.8rem;
   }
 
   .leg-heading time {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
   }
 
   .leg-content p {
-    margin-top: 0.25rem;
-    font-size: 0.65rem;
+    margin-top: 0.22rem;
+    font-size: 0.61rem;
   }
 
   .transfer-line {
-    padding: 0.42rem 0.55rem;
-    font-size: 0.61rem;
+    padding: 0.36rem 0.5rem;
+    font-size: 0.56rem;
   }
 
   .board-foot,
   .technical-drawer summary,
   .alternative-lines > div {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
   }
 
   .board-foot {
-    min-height: 2.1rem;
-    font-size: 0.57rem;
+    min-height: 1.9rem;
+    font-size: 0.54rem;
   }
 
   .technical-drawer summary {
-    min-height: 2.65rem;
-    font-size: 0.66rem;
+    min-height: 2.35rem;
+    font-size: 0.63rem;
   }
 
   .technical-content {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    font-size: 0.69rem;
-  }
-
-  .error-line {
-    height: fit-content;
-    margin-top: 0;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+    font-size: 0.67rem;
   }
 
   .rail-footer {
-    min-height: 2.75rem;
-    font-size: 0.58rem;
+    min-height: 2.35rem;
+    font-size: 0.56rem;
+  }
+}
+
+@media (min-width: 56rem) and (max-height: 46rem) {
+  main {
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .board-time,
+  .board-journey {
+    min-height: 12rem;
+  }
+
+  .board-time {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .board-time time {
+    font-size: clamp(3.7rem, 5vw, 4.8rem);
+  }
+
+  .arrival-time {
+    margin-top: 0.8rem;
+    padding-top: 0.55rem;
   }
 }
 

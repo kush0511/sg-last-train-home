@@ -118,90 +118,95 @@ function JourneyBoard({
         </span>
       </div>
 
-      <div class="board-time">
-        <div>
-          <p id="board-title">
-            {dataStale
-              ? "Verify before travel"
-              : exact
-                ? "Exact last train"
-                : "Be on the platform by"}
-          </p>
-          <time data-testid="board-by">{formatServiceTime(result.boardBy)}</time>
+      <div class="board-core">
+        <div class="board-time">
+          <div>
+            <p id="board-title">
+              {dataStale
+                ? "Verify before travel"
+                : exact
+                  ? "Exact last train"
+                  : "Be on the platform by"}
+            </p>
+            <time data-testid="board-by">{formatServiceTime(result.boardBy)}</time>
+          </div>
+          <div class="arrival-time">
+            <span>Arrive</span>
+            <strong>{formatServiceTime(result.arriveBy)}</strong>
+            <small>{formatDuration(result.arriveBy - result.boardBy)}</small>
+          </div>
         </div>
-        <div class="arrival-time">
-          <span>Arrive</span>
-          <strong>{formatServiceTime(result.arriveBy)}</strong>
-          <small>{formatDuration(result.arriveBy - result.boardBy)}</small>
-        </div>
-      </div>
 
-      {departed ? (
-        <div class="alert-line" role="alert">
-          Departed · do not rely on this route now
-        </div>
-      ) : null}
-      {dataStale ? (
-        <div class="alert-line" role="alert">
-          Data too old for this date · verify with the operator
-        </div>
-      ) : null}
-
-      {activeNotices.map((notice) => (
-        <details class="service-notice" key={notice}>
-          <summary>
-            <span>!</span>
-            {notice.split(".")[0]}
-            <span aria-hidden="true">＋</span>
-          </summary>
-          <p>{notice}</p>
-        </details>
-      ))}
-
-      <div
-        class={`compact-route ${result.rides.length > 1 ? "has-transfers" : ""}`}
-        aria-label="Recommended train itinerary"
-      >
-        {result.rides.map((ride, index) => {
-          const pattern = PATTERN_BY_ID.get(ride.patternId)!;
-          const from = STATION_BY_ID.get(ride.fromStationId)!;
-          const to = STATION_BY_ID.get(ride.toStationId)!;
-          const transfer = result.transfers[index];
-          return (
-            <div class="compact-leg" key={`${ride.patternId}-${index}`}>
-              <div
-                class="leg-rail"
-                style={{ "--line": LINES[pattern.lineId].colour }}
-                aria-hidden="true"
-              >
-                <i />
-                <span />
-                <i />
-              </div>
-              <div class="leg-content">
-                <div class="leg-heading">
-                  <LineBadge patternId={ride.patternId} />
-                  <strong>
-                    {from.name} <b>→</b> {to.name}
-                  </strong>
-                  <time>{formatServiceTime(ride.departure)}</time>
-                </div>
-                <p>
-                  {ride.fromCode} · Towards {pattern.destination} · {ride.stopCodes.length - 1}{" "}
-                  stop{ride.stopCodes.length === 2 ? "" : "s"}
-                </p>
-              </div>
-              {transfer ? (
-                <div class="transfer-line">
-                  <span>Change at {STATION_BY_ID.get(transfer.stationId)!.name}</span>
-                  <span>
-                    {transfer.walkMinutes} min walk + {transfer.bufferMinutes} min buffer
-                  </span>
-                </div>
-              ) : null}
+        <div class="board-journey">
+          {departed ? (
+            <div class="alert-line" role="alert">
+              Departed · do not rely on this route now
             </div>
-          );
-        })}
+          ) : null}
+          {dataStale ? (
+            <div class="alert-line" role="alert">
+              Data too old for this date · verify with the operator
+            </div>
+          ) : null}
+
+          {activeNotices.map((notice) => (
+            <details class="service-notice" key={notice}>
+              <summary>
+                <span>!</span>
+                {notice.split(".")[0]}
+                <span aria-hidden="true">＋</span>
+              </summary>
+              <p>{notice}</p>
+            </details>
+          ))}
+
+          <div
+            class={`compact-route ${result.rides.length > 1 ? "has-transfers" : ""}`}
+            aria-label="Recommended train itinerary"
+          >
+            {result.rides.map((ride, index) => {
+              const pattern = PATTERN_BY_ID.get(ride.patternId)!;
+              const from = STATION_BY_ID.get(ride.fromStationId)!;
+              const to = STATION_BY_ID.get(ride.toStationId)!;
+              const transfer = result.transfers[index];
+              return (
+                <div class="compact-leg" key={`${ride.patternId}-${index}`}>
+                  <div
+                    class="leg-rail"
+                    style={{ "--line": LINES[pattern.lineId].colour }}
+                    aria-hidden="true"
+                  >
+                    <i />
+                    <span />
+                    <i />
+                  </div>
+                  <div class="leg-content">
+                    <div class="leg-heading">
+                      <LineBadge patternId={ride.patternId} />
+                      <strong>
+                        {from.name} <b>→</b> {to.name}
+                      </strong>
+                      <time>{formatServiceTime(ride.departure)}</time>
+                    </div>
+                    <p>
+                      {ride.fromCode} · Towards {pattern.destination} ·{" "}
+                      {ride.stopCodes.length - 1} stop
+                      {ride.stopCodes.length === 2 ? "" : "s"}
+                    </p>
+                  </div>
+                  {transfer ? (
+                    <div class="transfer-line">
+                      <span>Change at {STATION_BY_ID.get(transfer.stationId)!.name}</span>
+                      <span>
+                        {transfer.walkMinutes} min walk + {transfer.bufferMinutes} min buffer
+                      </span>
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div class="board-foot">
@@ -388,7 +393,8 @@ export function App() {
               aria-label="Swap origin and destination"
               title="Swap stations"
             >
-              ⇅
+              <span class="swap-icon swap-icon--vertical" aria-hidden="true">⇅</span>
+              <span class="swap-icon swap-icon--horizontal" aria-hidden="true">⇄</span>
             </button>
             <StationPicker
               id="destination"
