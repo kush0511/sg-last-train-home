@@ -3,6 +3,8 @@
 A mobile-first, source-labelled last-train calculator for Singapore’s operating MRT and
 LRT network.
 
+**Live application:** <https://kush0511.github.io/sg-last-train-home/>
+
 The app works backwards from the last usable service on each leg. It models directed
 service patterns, real termini, the Changi branch, the completed Circle Line loop and
 Dhoby Ghaut spur, LRT loop directions, interchange walks, connection buffers,

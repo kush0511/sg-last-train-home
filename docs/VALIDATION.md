@@ -13,6 +13,7 @@ Environment: Node 24, Chromium mobile and desktop projects
 | `npm run test:coverage` | Pure calculation and search modules | Pass — 89.81% statements, 83.13% branches, 93.50% functions, 93.01% lines |
 | `npm run build` | Strict TypeScript and Vite production bundle | Pass |
 | `npm run test:e2e` | Fourteen user-visible scenarios in 320×568, iPhone 13 and desktop Chromium, with page/console error capture | Pass — 42 checks |
+| `PLAYWRIGHT_BASE_URL=… npx playwright test` | The same 42 checks in fresh contexts against the deployed repository path | Pass — 42 checks |
 | `npm run check:freshness` | 30-day warning / 45-day failure policy | Pass |
 
 ## Validation sample
@@ -65,8 +66,26 @@ repeated after Pages deployment:
   service notices and error role
 - [x] reduced motion: the media query disables transition duration and smooth scrolling
 - [x] console/page errors: none across all 42 browser checks
-- [ ] production source links open the cited publisher page
-- [ ] production refresh and repository-root URL return the application
+- [x] production source links resolve to the cited SBS Transit, SMRT and community pages
+- [x] production direct navigation, refresh and repository-root asset paths return 200
+
+## Production evidence
+
+- Production URL:
+  <https://kush0511.github.io/sg-last-train-home/>
+- Repository:
+  <https://github.com/kush0511/sg-last-train-home>
+- GitHub Pages workflow:
+  [successful run 30417983440](https://github.com/kush0511/sg-last-train-home/actions/runs/30417983440)
+- Full CI workflow:
+  [successful run 30417983453](https://github.com/kush0511/sg-last-train-home/actions/runs/30417983453)
+- The deployed HTML, CSS and JavaScript repository-path assets returned HTTP 200
+  with HTTPS enforcement.
+- Fresh production browser contexts passed all 42 cases at 320×568, iPhone 13
+  and desktop sizes.
+- Visual captures:
+  [mobile 390×844](screenshots/production-mobile.png) and
+  [desktop 1440×900](screenshots/production-desktop.png).
 
 ## Residual limitations
 
